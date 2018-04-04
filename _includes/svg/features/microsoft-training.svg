@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 153 153"{% if include.width %} width="{{include.width}}" {% endif %} {% if include.height %} height="{{include.height}}" {% endif %}>
+  <defs>
+    <style>
+      .msft-training-1 {
+        fill: #9cbfe3;
+      }
+    </style>
+  </defs>
+  <title>microsoft-training</title>
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="Layer_1-2" data-name="Layer 1"><rect class="msft-training-1" width="72" height="72"/><rect class="msft-training-1" x="81" width="72" height="72"/><rect class="msft-training-1" y="81" width="72" height="72"/><rect class="msft-training-1" x="81" y="81" width="72" height="72"/></g>
+  </g>
+</svg>

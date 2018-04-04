@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 263.38 306.38"{% if include.width %} width="{{include.width}}"{% endif %}{% if include.height %} height="{{include.height}}"{% endif %}>
+	<defs>
+		<style>
+			.{% if include.random %}{{include.random}}{% endif %}_gp-1 {
+				fill: url("#green-planet-linear-gradient");
+			}
+			.{% if include.random %}{{include.random}}{% endif %}_gp-2 {
+				fill: url("#{% if include.random %}{{include.random}}{% endif %}_gp-gradient-2");
+			}
+			.{% if include.random %}{{include.random}}{% endif %}_gp-3 {
+				fill: url("#{% if include.random %}{{include.random}}{% endif %}_gp-gradient-3");
+			}
+			.{% if include.random %}{{include.random}}{% endif %}_gp-4 {
+				fill: url("#{% if include.random %}{{include.random}}{% endif %}_gp-gradient-4");
+			}
+			.{% if include.random %}{{include.random}}{% endif %}_gp-5 {
+				fill: url("#{% if include.random %}{{include.random}}{% endif %}_gp-gradient-5");
+			}
+			.{% if include.random %}{{include.random}}{% endif %}_gp-6 {
+				fill: url("#{% if include.random %}{{include.random}}{% endif %}_gp-gradient-6");
+			}
+			.{% if include.random %}{{include.random}}{% endif %}_gp-7 {
+				fill: url("#{% if include.random %}{{include.random}}{% endif %}_gp-gradient-7");
+			}
+			.{% if include.random %}{{include.random}}{% endif %}_gp-8 {
+				fill: url("#{% if include.random %}{{include.random}}{% endif %}_gp-gradient-8");
+			}
+			.{% if include.random %}{{include.random}}{% endif %}_gp-9 {
+				fill: url("#{% if include.random %}{{include.random}}{% endif %}_gp-gradient-9");
+			}
+			.{% if include.random %}{{include.random}}{% endif %}_gp-10 {
+				fill: url("#{% if include.random %}{{include.random}}{% endif %}_gp-gradient-10");
+			}
+			.{% if include.random %}{{include.random}}{% endif %}_gp-11 {
+				fill: url("#{% if include.random %}{{include.random}}{% endif %}_gp-gradient-11");
+			}
+			.{% if include.random %}{{include.random}}{% endif %}_gp-12 {
+				fill: url("#{% if include.random %}{{include.random}}{% endif %}_gp-gradient-12");
+			}
+			.{% if include.random %}{{include.random}}{% endif %}_gp-13 {
+				fill: url("#{% if include.random %}{{include.random}}{% endif %}_gp-gradient-13");
+			}
+			.{% if include.random %}{{include.random}}{% endif %}_gp-14 {
+				fill: url("#{% if include.random %}{{include.random}}{% endif %}_gp-gradient-14");
+			}
+			.{% if include.random %}{{include.random}}{% endif %}_gp-15 {
+				fill: url("#{% if include.random %}{{include.random}}{% endif %}_gp-gradient-15");
+			}
+			.{% if include.random %}{{include.random}}{% endif %}_gp-16 {
+				fill: url("#{% if include.random %}{{include.random}}{% endif %}_gp-gradient-16");
+			}
+			.{% if include.random %}{{include.random}}{% endif %}_gp-17 {
+				fill: url("#{% if include.random %}{{include.random}}{% endif %}_gp-gradient-17");
+			}
+			.{% if include.random %}{{include.random}}{% endif %}_gp-18 {
+				fill: url("#{% if include.random %}{{include.random}}{% endif %}_gp-gradient-18");
+			}
+			.{% if include.random %}{{include.random}}{% endif %}_gp-19 {
+				fill: url("#{% if include.random %}{{include.random}}{% endif %}_gp-gradient-19");
+			}
+			.{% if include.random %}{{include.random}}{% endif %}_gp-20 {
+				fill: url("#{% if include.random %}{{include.random}}{% endif %}_gp-gradient-20");
+			}
+			.{% if include.random %}{{include.random}}{% endif %}_gp-21 {
+				fill: url("#{% if include.random %}{{include.random}}{% endif %}_gp-gradient-21");
+			}
+			.{% if include.random %}{{include.random}}{% endif %}_gp-22 {
+				fill: url("#{% if include.random %}{{include.random}}{% endif %}_gp-gradient-22");
+			}
+			.{% if include.random %}{{include.random}}{% endif %}_gp-23 {
+				fill: url("#{% if include.random %}{{include.random}}{% endif %}_gp-gradient-23");
+			}
+			.{% if include.random %}{{include.random}}{% endif %}_gp-24 {
+				fill: url("#{% if include.random %}{{include.random}}{% endif %}_gp-gradient-24");
+			}
+			.{% if include.random %}{{include.random}}{% endif %}_gp-25 {
+				fill: url("#{% if include.random %}{{include.random}}{% endif %}_gp-gradient-25");
+			}
+			.{% if include.random %}{{include.random}}{% endif %}_gp-26 {
+				fill: url("#{% if include.random %}{{include.random}}{% endif %}_gp-gradient-26");
+			}
+			.{% if include.random %}{{include.random}}{% endif %}_gp-27 {
+				fill: url("#{% if include.random %}{{include.random}}{% endif %}_gp-gradient-27");
+			}
+			.{% if include.random %}{{include.random}}{% endif %}_gp-28 {
+				fill: url("#{% if include.random %}{{include.random}}{% endif %}_gp-gradient-28");
+			}
+			.{% if include.random %}{{include.random}}{% endif %}_gp-29 {
+				fill: url("#{% if include.random %}{{include.random}}{% endif %}_gp-gradient-29");
+			}
+		</style>
+		<linearGradient id="green-planet-linear-gradient" x1="144.34" y1="258.79" x2="119.04" y2="284.09" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#4cdf83"/><stop offset="1" stop-color="#2cb565"/></linearGradient>
+		<linearGradient id="{% if include.random %}{{include.random}}{% endif %}_gp-gradient-2" x1="144.34" y1="22.29" x2="119.04" y2="47.59" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#2cb565"/><stop offset="1" stop-color="#4cdf83"/></linearGradient><linearGradient id="{% if include.random %}{{include.random}}{% endif %}_gp-gradient-3" x1="34.4" y1="83.37" x2="24.73" y2="93.03" xlink:href="#green-planet-linear-gradient"/><linearGradient id="{% if include.random %}{{include.random}}{% endif %}_gp-gradient-4" x1="223.84" y1="223.94" x2="243.79" y2="212.42" xlink:href="#green-planet-linear-gradient"/><linearGradient id="{% if include.random %}{{include.random}}{% endif %}_gp-gradient-5" x1="248.91" y1="73.11" x2="218.72" y2="103.29" xlink:href="#green-planet-linear-gradient"/><linearGradient id="{% if include.random %}{{include.random}}{% endif %}_gp-gradient-6" x1="44.66" y1="203.08" x2="14.47" y2="233.27" xlink:href="#green-planet-linear-gradient"/><linearGradient id="{% if include.random %}{{include.random}}{% endif %}_gp-gradient-7" x1="230.58" y1="54.3" x2="32.8" y2="252.08" xlink:href="#green-planet-linear-gradient"/><linearGradient id="{% if include.random %}{{include.random}}{% endif %}_gp-gradient-8" x1="229.08" y1="6.64" x2="-45.71" y2="184.69" gradientTransform="translate(97.95 -18.08) rotate(45)" xlink:href="#green-planet-linear-gradient"/><linearGradient id="{% if include.random %}{{include.random}}{% endif %}_gp-gradient-9" x1="237.98" y1="20.36" x2="-36.82" y2="198.41" gradientTransform="translate(104.54 -51.38) rotate(45)" xlink:href="#green-planet-linear-gradient"/><linearGradient id="{% if include.random %}{{include.random}}{% endif %}_gp-gradient-10" x1="223.49" y1="-1.99" x2="-51.3" y2="176.06" gradientTransform="translate(83.54 -52.87) rotate(45)" xlink:href="#green-planet-linear-gradient"/><linearGradient id="{% if include.random %}{{include.random}}{% endif %}_gp-gradient-11" x1="262.71" y1="58.53" x2="-12.09" y2="236.58" gradientTransform="translate(151.96 13.91) rotate(45)" xlink:href="#green-planet-linear-gradient"/><linearGradient id="{% if include.random %}{{include.random}}{% endif %}_gp-gradient-12" x1="246.36" y1="33.3" x2="-28.44" y2="211.35" gradientTransform="translate(126.16 0.82) rotate(45)" xlink:href="#green-planet-linear-gradient"/><linearGradient id="{% if include.random %}{{include.random}}{% endif %}_gp-gradient-13" x1="246.4" y1="33.36" x2="-28.4" y2="211.41" gradientTransform="translate(109.93 -87.58) rotate(45)" xlink:href="#green-planet-linear-gradient"/><linearGradient id="{% if include.random %}{{include.random}}{% endif %}_gp-gradient-14" x1="255.25" y1="47.03" x2="-19.55" y2="225.07" gradientTransform="translate(132.75 -32.49) rotate(45)" xlink:href="#green-planet-linear-gradient"/><linearGradient id="{% if include.random %}{{include.random}}{% endif %}_gp-gradient-15" x1="304.79" y1="123.49" x2="29.99" y2="301.53" gradientTransform="translate(190.03 471.09) rotate(-135)" xlink:href="#green-planet-linear-gradient"/><linearGradient id="{% if include.random %}{{include.random}}{% endif %}_gp-gradient-16" x1="295.9" y1="109.76" x2="21.1" y2="287.81" gradientTransform="translate(109.63 455.19) rotate(-135)" xlink:href="#green-planet-linear-gradient"/><linearGradient id="{% if include.random %}{{include.random}}{% endif %}_gp-gradient-17" x1="310.38" y1="132.12" x2="35.59" y2="310.16" gradientTransform="translate(105.98 505.88) rotate(-134.99)" xlink:href="#green-planet-linear-gradient"/><linearGradient id="{% if include.random %}{{include.random}}{% endif %}_gp-gradient-18" x1="271.17" y1="71.59" x2="-3.63" y2="249.64" gradientTransform="translate(267.24 340.69) rotate(-135)" xlink:href="#green-planet-linear-gradient"/><linearGradient id="{% if include.random %}{{include.random}}{% endif %}_gp-gradient-19" x1="287.52" y1="96.82" x2="12.72" y2="274.87" gradientTransform="translate(235.64 402.99) rotate(-135)" xlink:href="#green-planet-linear-gradient"/><linearGradient id="{% if include.random %}{{include.random}}{% endif %}_gp-gradient-20" x1="287.48" y1="96.76" x2="12.68" y2="274.81" gradientTransform="translate(22.22 442.18) rotate(-135)" xlink:href="#green-planet-linear-gradient"/><linearGradient id="{% if include.random %}{{include.random}}{% endif %}_gp-gradient-21" x1="278.63" y1="83.1" x2="3.83" y2="261.15" gradientTransform="translate(160.34 -64.3) rotate(45)" xlink:href="#green-planet-linear-gradient"/><linearGradient id="{% if include.random %}{{include.random}}{% endif %}_gp-gradient-22" x1="274.39" y1="76.57" x2="-0.4" y2="254.62" gradientTransform="translate(165.76 -2) rotate(45)" xlink:href="#green-planet-linear-gradient"/><linearGradient id="{% if include.random %}{{include.random}}{% endif %}_gp-gradient-23" x1="263.21" y1="59.31" x2="-11.59" y2="237.36" gradientTransform="translate(136.93 -71.59) rotate(45)" xlink:href="#green-planet-linear-gradient"/><linearGradient id="{% if include.random %}{{include.random}}{% endif %}_gp-gradient-24" x1="221.32" y1="-44.63" x2="-122.18" y2="177.93" xlink:href="#green-planet-linear-gradient"/><linearGradient id="{% if include.random %}{{include.random}}{% endif %}_gp-gradient-25" x1="380.75" y1="131.57" x2="37.25" y2="354.13" xlink:href="#green-planet-linear-gradient"/><linearGradient id="{% if include.random %}{{include.random}}{% endif %}_gp-gradient-26" x1="358.1" y1="158.36" x2="14.6" y2="380.92" xlink:href="#green-planet-linear-gradient"/><linearGradient id="{% if include.random %}{{include.random}}{% endif %}_gp-gradient-27" x1="272.25" y1="63.48" x2="-71.25" y2="286.04" xlink:href="#green-planet-linear-gradient"/><linearGradient id="{% if include.random %}{{include.random}}{% endif %}_gp-gradient-28" x1="243.97" y1="-71.43" x2="-99.53" y2="151.13" xlink:href="#green-planet-linear-gradient"/><linearGradient id="{% if include.random %}{{include.random}}{% endif %}_gp-gradient-29" x1="329.82" y1="23.45" x2="-13.68" y2="246.01" xlink:href="#green-planet-linear-gradient"/></defs>
+	<title>green-planet-icon</title>
+	<g id="Layer_2" data-name="Layer 2">
+		<g id="Layer_1-2" data-name="Layer 1"><path class="{% if include.random %}{{include.random}}{% endif %}_gp-1" d="M131.69,295.63a2.69,2.69,0,0,1-2.69-2.69v-43a2.69,2.69,0,0,1,5.38,0v43A2.69,2.69,0,0,1,131.69,295.63Z"/><path class="{% if include.random %}{{include.random}}{% endif %}_gp-2" d="M131.69,59.13A2.69,2.69,0,0,1,129,56.44v-43a2.69,2.69,0,0,1,5.38,0v43A2.69,2.69,0,0,1,131.69,59.13Z"/><path class="{% if include.random %}{{include.random}}{% endif %}_gp-3" d="M45.69,101.15a2.68,2.68,0,0,1-1.44-.42L12,80.21a2.69,2.69,0,1,1,2.89-4.54L47.13,96.19a2.69,2.69,0,0,1-1.45,5Z"/><path class="{% if include.random %}{{include.random}}{% endif %}_gp-4" d="M249.94,231.13a2.68,2.68,0,0,1-1.44-.42l-32.25-20.52a2.69,2.69,0,1,1,2.89-4.54l32.25,20.52a2.69,2.69,0,0,1-1.45,5Z"/><path class="{% if include.random %}{{include.random}}{% endif %}_gp-5" d="M217.69,101.15a2.69,2.69,0,0,1-1.45-5L248.5,75.67a2.69,2.69,0,1,1,2.89,4.54l-32.25,20.52A2.68,2.68,0,0,1,217.69,101.15Z"/><path class="{% if include.random %}{{include.random}}{% endif %}_gp-6" d="M13.44,231.13a2.69,2.69,0,0,1-1.45-5l32.25-20.52a2.69,2.69,0,1,1,2.89,4.54L14.88,230.71A2.68,2.68,0,0,1,13.44,231.13Z"/><path class="{% if include.random %}{{include.random}}{% endif %}_gp-7" d="M131.69,296,10.75,230V76.34l120.94-66,120.94,66V230ZM16.12,226.84l115.56,63,115.56-63V79.53l-115.56-63-115.56,63Z"/><rect class="{% if include.random %}{{include.random}}{% endif %}_gp-8" x="37.99" y="101" width="65.61" height="16.4" rx="8.2" ry="8.2" transform="translate(-56.48 82.04) rotate(-45)"/><rect class="{% if include.random %}{{include.random}}{% endif %}_gp-9" x="69.18" y="92.3" width="90.22" height="16.4" rx="8.2" ry="8.2" transform="translate(-37.59 110.25) rotate(-45)"/><rect class="{% if include.random %}{{include.random}}{% endif %}_gp-10" x="97.39" y="66.2" width="16.4" height="16.4" rx="8.2" ry="8.2" transform="translate(-21.68 96.46) rotate(-45)"/><rect class="{% if include.random %}{{include.random}}{% endif %}_gp-11" x="50.99" y="182.19" width="16.4" height="16.4" rx="8.2" ry="8.2" transform="translate(-117.29 97.62) rotate(-45)"/><rect class="{% if include.random %}{{include.random}}{% endif %}_gp-12" x="41.59" y="144.49" width="41.01" height="16.4" rx="8.2" ry="8.2" transform="translate(-89.78 88.63) rotate(-45)"/><rect class="{% if include.random %}{{include.random}}{% endif %}_gp-13" x="140.18" y="80.7" width="41.01" height="16.4" rx="8.2" ry="8.2" transform="translate(-15.8 139.66) rotate(-45)"/><rect class="{% if include.random %}{{include.random}}{% endif %}_gp-14" x="56.38" y="135.79" width="98.42" height="16.4" rx="8.2" ry="8.2" transform="translate(-70.89 116.84) rotate(-45)"/><rect class="{% if include.random %}{{include.random}}{% endif %}_gp-15" x="159.78" y="187.99" width="65.61" height="16.4" rx="8.2" ry="8.2" transform="translate(467.49 198.74) rotate(135)"/><rect class="{% if include.random %}{{include.random}}{% endif %}_gp-16" x="103.98" y="196.69" width="90.22" height="16.4" rx="8.2" ry="8.2" transform="translate(399.39 244.35) rotate(135)"/><rect class="{% if include.random %}{{include.random}}{% endif %}_gp-17" x="149.58" y="222.79" width="16.4" height="16.4" rx="8.2" ry="8.2" transform="translate(432.7 282.7) rotate(134.99)"/><rect class="{% if include.random %}{{include.random}}{% endif %}_gp-18" x="195.98" y="106.8" width="16.4" height="16.4" rx="8.2" ry="8.2" transform="translate(429.88 51.94) rotate(135)"/><rect class="{% if include.random %}{{include.random}}{% endif %}_gp-19" x="180.78" y="144.49" width="41.01" height="16.4" rx="8.2" ry="8.2" transform="translate(451.58 118.34) rotate(135)"/><rect class="{% if include.random %}{{include.random}}{% endif %}_gp-20" x="82.19" y="208.29" width="41.01" height="16.4" rx="8.2" ry="8.2" transform="translate(328.39 296.96) rotate(135)"/><rect class="{% if include.random %}{{include.random}}{% endif %}_gp-21" x="108.58" y="153.19" width="98.42" height="16.4" rx="8.2" ry="8.2" transform="translate(-67.91 158.84) rotate(-45)"/><rect class="{% if include.random %}{{include.random}}{% endif %}_gp-22" x="56.59" y="190.89" width="57.41" height="16.4" rx="8.2" ry="8.2" transform="translate(-115.8 118.62) rotate(-45)"/><rect class="{% if include.random %}{{include.random}}{% endif %}_gp-23" x="93.37" y="121.3" width="123.03" height="16.4" rx="8.2" ry="8.2" transform="translate(-46.2 147.45) rotate(-45)"/><circle class="{% if include.random %}{{include.random}}{% endif %}_gp-24" cx="131.69" cy="13.44" r="13.44"/><circle class="{% if include.random %}{{include.random}}{% endif %}_gp-25" cx="131.69" cy="292.94" r="13.44"/><circle class="{% if include.random %}{{include.random}}{% endif %}_gp-26" cx="249.94" cy="228.44" r="13.44"/><circle class="{% if include.random %}{{include.random}}{% endif %}_gp-27" cx="249.94" cy="77.94" r="13.44"/><circle class="{% if include.random %}{{include.random}}{% endif %}_gp-28" cx="13.44" cy="77.94" r="13.44"/><circle class="{% if include.random %}{{include.random}}{% endif %}_gp-29" cx="13.44" cy="228.44" r="13.44"/></g>
+	</g>
+</svg>

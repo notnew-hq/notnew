@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 207 243"{% if include.width %} width="{{include.width}}" {% endif %} {% if include.height %} height="{{include.height}}" {% endif %}>
+  <defs>
+    <style>
+      .vis-rep-1 {
+        fill: #41cdfc;
+      }
+      .vis-rep-2 {
+        fill: #ff902c;
+      }
+    </style>
+  </defs>
+  <title>Visual Reporting Engine</title>
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="Layer_1-2" data-name="Layer 1"><rect class="vis-rep-1" y="189" width="27" height="54"/><rect class="vis-rep-1" x="45" y="144" width="27" height="99"/><rect class="vis-rep-1" x="90" y="99" width="27" height="144"/><rect class="vis-rep-1" x="135" y="54" width="27" height="189"/><rect class="vis-rep-2" x="180" width="27" height="243"/></g>
+  </g>
+</svg>

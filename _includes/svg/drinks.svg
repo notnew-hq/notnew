@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 414 450" width="{{include.width}}">
+  <defs>
+    <style>
+      .drinks-1 {
+        fill: #9cbfe3;
+      }
+      .drinks-2 {
+        fill: #6ba0d4;
+      }
+      .drinks-3 {
+        fill: #41cdfc;
+      }
+      .drinks-4 {
+        fill: #3980c6;
+      }
+      .drinks-5 {
+        fill: #06488a;
+      }
+    </style>
+  </defs>
+  <title>drinks</title>
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="Drinks"><path class="drinks-1" d="M141.79,154.81,108,45V18H36V45L2.21,154.81A50,50,0,0,0,0,169.52V440a10,10,0,0,0,10,10H134a10,10,0,0,0,10-10V169.52A50,50,0,0,0,141.79,154.81Z"/><path class="drinks-2" d="M132.79,158.19,103.5,63h-63L11.21,158.19A50,50,0,0,0,9,172.89V422a10,10,0,0,0,10,10H125a10,10,0,0,0,10-10V172.89A50,50,0,0,0,132.79,158.19Z"/><rect class="drinks-3" y="198" width="90" height="198"/><rect class="drinks-4" y="207" width="81" height="9"/><rect class="drinks-4" y="378" width="81" height="9"/><rect class="drinks-4" y="243" width="45" height="9"/><rect class="drinks-4" y="261" width="45" height="9"/><rect class="drinks-4" y="279" width="45" height="9"/><rect class="drinks-4" y="297" width="45" height="9"/><rect class="drinks-4" y="315" width="45" height="9"/><rect class="drinks-4" y="333" width="45" height="9"/><rect class="drinks-4" x="72" y="207" width="9" height="180"/><rect class="drinks-3" x="27" width="90" height="18"/><polygon class="drinks-1" points="414 115.13 414 108 72 108 72 115.13 235.88 279 235.88 421.5 129 450 357 450 250.13 421.5 250.13 279 414 115.13"/><rect class="drinks-4" x="224.97" y="139.75" width="184.55" height="4" transform="translate(-7.31 265.85) rotate(-45)"/><rect class="drinks-3" x="261" y="135" width="45" height="72" rx="22.5" ry="22.5"/><path class="drinks-4" d="M135,162l98.34,102.19a14.27,14.27,0,0,0,9.84,3.94h0a14.27,14.27,0,0,0,9.86-4L351,162Z"/><circle class="drinks-5" cx="283.5" cy="148.5" r="4.5"/></g>
+  </g>
+</svg>

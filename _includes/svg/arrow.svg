@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 43 35.01"{% if include.width %} width="{{include.width}}"{% endif %}{% if include.height %} height="{{include.height}}"{% endif %}>
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="Layer_1-2" data-name="Layer 1"><path class="icon{%if include.color %} {{include.color}}{% endif %}" d="M42.71,16.8,25.91,0,24.49,1.41,39.59,16.51H0v2H39.59L24.49,33.6,25.91,35l16.8-16.8A1,1,0,0,0,42.71,16.8Z"/></g>
+  </g>
+</svg>

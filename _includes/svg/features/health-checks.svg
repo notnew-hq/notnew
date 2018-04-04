@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 224 192.5"{% if include.width %} width="{{include.width}}" {% endif %} {% if include.height %} height="{{include.height}}" {% endif %}>
+  <defs>
+    <style>
+      .hlth-chk-1 {
+        fill: #ff902c;
+      }
+      .hlth-chk-2 {
+        fill: #6ba0d4;
+      }
+      .hlth-chk-3 {
+        fill: #41cdfc;
+      }
+      .hlth-chk-4 {
+        fill: #cedff1;
+      }
+    </style>
+  </defs>
+  <title>Pre-packaged Health Checks</title>
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="Layer_1-2" data-name="Layer 1"><polygon class="hlth-chk-1" points="148.5 0 76.5 0 67.5 0 67.5 9 67.5 45 76.5 45 76.5 9 148.5 9 148.5 45 157.5 45 157.5 9 157.5 0 148.5 0"/><rect class="hlth-chk-2" x="13.5" y="27" width="45" height="18"/><path class="hlth-chk-3" d="M62.5,49H9.5V23h53Zm-45-8h37V31h-37Z"/><rect class="hlth-chk-2" x="166.5" y="27" width="45" height="18"/><path class="hlth-chk-3" d="M215.5,49h-53V23h53Zm-45-8h37V31h-37Z"/><rect class="hlth-chk-4" x="4" y="44.5" width="216" height="144"/><path class="hlth-chk-3" d="M224,192.5H0V40.5H224Zm-216-8H216V48.5H8Z"/><rect class="hlth-chk-1" x="94.5" y="63" width="36" height="108"/><rect class="hlth-chk-1" x="94.5" y="63" width="36" height="108" transform="translate(229.5 4.5) rotate(90)"/></g>
+  </g>
+</svg>

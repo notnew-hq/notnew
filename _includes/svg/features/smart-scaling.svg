@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 152 153"{% if include.width %} width="{{include.width}}" {% endif %} {% if include.height %} height="{{include.height}}" {% endif %}>
+  <defs>
+    <style>
+      .smrt-scl-1 {
+        fill: #41cdfc;
+      }
+    </style>
+  </defs>
+  <title>Smart Scaling Peer-to-peer Technology</title>
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="Layer_1-2" data-name="Layer 1"><polygon
+      class="smrt-scl-1"
+      points="152 31 152 0 121 0 121 8 138.34 8 76 70.34 13.66 8 31 8 31 0 0 0 0 31 8 31 8 13.66 70.34 76 8 138.34 8 122 0 122 0 153 31 153 31 145 12.66 145 76 81.66 139.34 145 121 145 121 153 152 153 152 122 144 122 144 138.34 81.66 76 144 13.66 144 31 152 31"/></g>
+  </g>
+</svg>

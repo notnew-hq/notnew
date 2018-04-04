@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17.43 16">
+  <defs>
+    <style>
+      .social-icon {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <title>linkedin</title>
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="Layer_1-2" data-name="Layer 1">
+      <polygon class="social-icon" points="0.2 16 3.89 16 3.89 16 3.89 4.9 0.2 4.9 0.2 16"/>
+      <path class="social-icon" d="M1.81,3.73h0A1.79,1.79,0,0,0,3.68,1.86,1.78,1.78,0,0,0,1.85,0,1.78,1.78,0,0,0,0,1.86,1.77,1.77,0,0,0,1.81,3.73Z"/>
+      <path class="social-icon" d="M13.35,4.6a3.62,3.62,0,0,0-3.29,1.79V4.85H6.3c0,1,0,11.15,0,11.15h3.76V9.95a2.42,2.42,0,0,1,.12-.88,2,2,0,0,1,1.87-1.31c1.32,0,1.73,1,1.73,2.45V16h3.65V9.79C17.43,6.46,15.74,4.6,13.35,4.6ZM10.06,6.43h0l0,0Z"/>
+    </g>
+  </g>
+</svg>

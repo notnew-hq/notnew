@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 334 334"{% if include.width %} width="{{include.width}}"{% endif %}{% if include.height %} height="{{include.height}}"{% endif %}>
+  <defs>
+    <style>
+      .{% if include.random %}{{include.random}}{% endif %}_win10-1 {
+        fill: url("#{% if include.random %}{{include.random}}{% endif %}_win10-gradient");
+      }
+      .{% if include.random %}{{include.random}}{% endif %}_win10-2 {
+        fill: url("#{% if include.random %}{{include.random}}{% endif %}_win10-gradient-2");
+      }
+      .{% if include.random %}{{include.random}}{% endif %}_win10-3 {
+        fill: url("#{% if include.random %}{{include.random}}{% endif %}_win10-gradient-3");
+      }
+      .{% if include.random %}{{include.random}}{% endif %}_win10-4 {
+        fill: url("#{% if include.random %}{{include.random}}{% endif %}_win10-gradient-4");
+      }
+      .{% if include.random %}{{include.random}}{% endif %}_win10-5 {
+        fill: url("#{% if include.random %}{{include.random}}{% endif %}_win10-gradient-5");
+      }
+    </style>
+    <linearGradient id="{% if include.random %}{{include.random}}{% endif %}_win10-gradient" x1="193" y1="108.06" x2="258.88" y2="108.06" gradientTransform="translate(142.59 -128.11) rotate(45)" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#031d39"/><stop offset="1" stop-color="#4e57f4"/></linearGradient>
+    <linearGradient id="{% if include.random %}{{include.random}}{% endif %}_win10-gradient-2" x1="55.47" y1="235.76" x2="141" y2="235.76" gradientTransform="translate(195.48 -0.41) rotate(45)" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#072042"/><stop offset="0.5" stop-color="#4e57f4"/><stop offset="1" stop-color="#031d39"/></linearGradient>
+    <linearGradient id="{% if include.random %}{{include.random}}{% endif %}_win10-gradient-3" x1="207.15" y1="207.52" x2="288.94" y2="207.52" gradientTransform="translate(363.66 -94.51) rotate(71.03)" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#072042"/><stop offset="0.06" stop-color="#152b65"/><stop offset="0.17" stop-color="#293a97"/><stop offset="0.27" stop-color="#3947c0"/><stop offset="0.36" stop-color="#4550dc"/><stop offset="0.44" stop-color="#4c55ee"/><stop offset="0.5" stop-color="#4e57f4"/><stop offset="0.56" stop-color="#4b55ee"/><stop offset="0.63" stop-color="#444fdb"/><stop offset="0.72" stop-color="#3846be"/><stop offset="0.82" stop-color="#283994"/><stop offset="0.93" stop-color="#132960"/><stop offset="1" stop-color="#031d39"/></linearGradient><linearGradient id="{% if include.random %}{{include.random}}{% endif %}_win10-gradient-4" x1="110.78" y1="89.64" x2="144.63" y2="89.64" gradientTransform="translate(36.2 -36.73) rotate(19.03)" xlink:href="#{% if include.random %}{{include.random}}{% endif %}_win10-gradient"/>
+    <linearGradient id="{% if include.random %}{{include.random}}{% endif %}_win10-gradient-5" x1="11.51" y1="322.49" x2="269.3" y2="64.7" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#052b55"/><stop offset="1" stop-color="#4e57f4"/></linearGradient>
+  </defs>
+  <title>windows-10-icon</title>
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="Layer_1-2" data-name="Layer 1"><rect class="{% if include.random %}{{include.random}}{% endif %}_win10-1" x="184.26" y="103.15" width="83.36" height="9.82" transform="translate(-10.23 191.41) rotate(-45)"/><rect class="{% if include.random %}{{include.random}}{% endif %}_win10-2" x="42.67" y="230.85" width="111.14" height="9.82" transform="translate(-137.94 138.52) rotate(-45)"/><rect class="{% if include.random %}{{include.random}}{% endif %}_win10-3" x="243.13" y="165.97" width="9.82" height="83.1" transform="translate(-28.84 374.63) rotate(-71.03)"/><rect class="{% if include.random %}{{include.random}}{% endif %}_win10-4" x="122.79" y="51.97" width="9.82" height="75.34" transform="translate(-22.25 46.53) rotate(-19.03)"/><path
+      class="{% if include.random %}{{include.random}}{% endif %}_win10-5"
+      d="M275.06,78.59a19.65,19.65,0,1,1-19.65-19.65A19.65,19.65,0,0,1,275.06,78.59ZM39.29,117.88a19.65,19.65,0,1,0,19.65,19.65A19.65,19.65,0,0,0,39.29,117.88ZM216.12,275.06a19.65,19.65,0,1,0,19.65,19.65A19.65,19.65,0,0,0,216.12,275.06Zm88.41-78.59A29.47,29.47,0,1,0,334,225.94,29.47,29.47,0,0,0,304.53,196.47ZM108.06,0a29.47,29.47,0,1,0,29.47,29.47A29.47,29.47,0,0,0,108.06,0Zm49.12,117.88a58.94,58.94,0,1,0,58.94,58.94A58.94,58.94,0,0,0,157.18,117.88ZM39.29,255.41a39.29,39.29,0,1,0,39.29,39.29A39.29,39.29,0,0,0,39.29,255.41Z"/></g>
+  </g>
+</svg>

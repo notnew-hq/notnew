@@ -1,0 +1,23 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 445.39 351.18"{% if include.width %} width="{{include.width}}" {% endif %} {% if include.height %} height="{{include.height}}" {% endif %}>
+  <defs>
+    <style>
+      .cmnty-tools-1 {
+        fill: #ffe9d5;
+        stroke: #ff902c;
+      }
+      .cmnty-tools-1,
+      .cmnty-tools-2 {
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 10px;
+      }
+      .cmnty-tools-2 {
+        fill: #cedff1;
+        stroke: #41cdfc;
+      }
+    </style>
+  </defs>
+  <title>Windows 10 Community Tools</title><path
+    class="cmnty-tools-1"
+    d="M502.62,526.53L287.19,311.1a61.93,61.93,0,0,0-73.05-84l32.45,32.45a31,31,0,0,1,0,43.8h0a31,31,0,0,1-43.8,0L170.34,270.9a61.93,61.93,0,0,0,84,73.05L469.77,559.38a23.23,23.23,0,0,0,32.85,0h0A23.23,23.23,0,0,0,502.62,526.53Z"
+    transform="translate(-163.24 -220)"/><rect class="cmnty-tools-2" x="428.52" y="298.92" width="72" height="36" transform="translate(196.92 -455.64) rotate(45)"/><path class="cmnty-tools-2" d="M310.85,282.46h54a0,0,0,0,1,0,0V577.73a27,27,0,0,1-27,27h0a27,27,0,0,1-27-27V282.46a0,0,0,0,1,0,0Z" transform="translate(249.38 -328.97) rotate(45)"/><rect class="cmnty-tools-2" x="546.64" y="302.71" width="29.25" height="90.55" transform="translate(247.22 -514.95) rotate(45)"/><path class="cmnty-tools-2" d="M397.91,227.6l-33.13,6.63,32.05,10.68a133.94,133.94,0,0,1,52.35,32.36l81.06,81.06L571.61,317l-52.73-52.73A133.94,133.94,0,0,0,397.91,227.6Z" transform="translate(-163.24 -220)"/></svg>

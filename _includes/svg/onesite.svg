@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 394.49 399"{% if include.width %} width="{{include.width}}"{% endif %}{% if include.height %} height="{{include.height}}"{% endif %}>
+  <defs>
+    <style>
+      .{% if include.random %}{{include.random}}{% endif %}_os-1 {
+        fill: url("#{% if include.random %}{{include.random}}{% endif %}_os-gradient");
+      }
+      .{% if include.random %}{{include.random}}{% endif %}_os-2 {
+        fill: url("#{% if include.random %}{{include.random}}{% endif %}_os-gradient-2");
+      }
+      .{% if include.random %}{{include.random}}{% endif %}_os-3 {
+        fill: url("#{% if include.random %}{{include.random}}{% endif %}_os-gradient-3");
+      }
+      .{% if include.random %}{{include.random}}{% endif %}_os-4 {
+        fill: url("#{% if include.random %}{{include.random}}{% endif %}_os-gradient-4");
+      }
+      .{% if include.random %}{{include.random}}{% endif %}_os-5 {
+        fill: url("#{% if include.random %}{{include.random}}{% endif %}_os-gradient-5");
+      }
+      .{% if include.random %}{{include.random}}{% endif %}_os-6 {
+        fill: url("#{% if include.random %}{{include.random}}{% endif %}_os-gradient-6");
+      }
+      .{% if include.random %}{{include.random}}{% endif %}_os-7 {
+        fill: url("#{% if include.random %}{{include.random}}{% endif %}_os-gradient-7");
+      }
+      .{% if include.random %}{{include.random}}{% endif %}_os-8 {
+        fill: url("#{% if include.random %}{{include.random}}{% endif %}_os-gradient-8");
+      }
+      .{% if include.random %}{{include.random}}{% endif %}_os-9 {
+        fill: url("#{% if include.random %}{{include.random}}{% endif %}_os-gradient-9");
+      }
+      .{% if include.random %}{{include.random}}{% endif %}_os-10 {
+        fill: url("#{% if include.random %}{{include.random}}{% endif %}_os-gradient-10");
+      }
+      .{% if include.random %}{{include.random}}{% endif %}_os-11 {
+        fill: url("#{% if include.random %}{{include.random}}{% endif %}_os-gradient-11");
+      }
+      .{% if include.random %}{{include.random}}{% endif %}_os-12 {
+        fill: url("#{% if include.random %}{{include.random}}{% endif %}_os-gradient-12");
+      }
+      .{% if include.random %}{{include.random}}{% endif %}_os-13 {
+        fill: url("#{% if include.random %}{{include.random}}{% endif %}_os-gradient-13");
+      }
+      .{% if include.random %}{{include.random}}{% endif %}_os-14 {
+        fill: url("#{% if include.random %}{{include.random}}{% endif %}_os-gradient-14");
+      }
+      .{% if include.random %}{{include.random}}{% endif %}_os-15 {
+        fill: url("#{% if include.random %}{{include.random}}{% endif %}_os-gradient-17");
+      }
+      .{% if include.random %}{{include.random}}{% endif %}_os-16 {
+        fill: url("#{% if include.random %}{{include.random}}{% endif %}_os-gradient-18");
+      }
+      .{% if include.random %}{{include.random}}{% endif %}_os-17 {
+        fill: url("#{% if include.random %}{{include.random}}{% endif %}_os-gradient-19");
+      }
+      .{% if include.random %}{{include.random}}{% endif %}_os-18 {
+        fill: url("#{% if include.random %}{{include.random}}{% endif %}_os-gradient-20");
+      }
+      .{% if include.random %}{{include.random}}{% endif %}_os-19 {
+        fill: url("#{% if include.random %}{{include.random}}{% endif %}_os-gradient-21");
+      }
+      .{% if include.random %}{{include.random}}{% endif %}_os-20 {
+        fill: url("#{% if include.random %}{{include.random}}{% endif %}_os-gradient-22");
+      }
+      .{% if include.random %}{{include.random}}{% endif %}_os-21 {
+        fill: url("#{% if include.random %}{{include.random}}{% endif %}_os-gradient-23");
+      }
+      .{% if include.random %}{{include.random}}{% endif %}_os-22 {
+        fill: url("#{% if include.random %}{{include.random}}{% endif %}_os-gradient-24");
+      }
+      .{% if include.random %}{{include.random}}{% endif %}_os-23 {
+        fill: url("#{% if include.random %}{{include.random}}{% endif %}_os-gradient-25");
+      }
+      .{% if include.random %}{{include.random}}{% endif %}_os-24 {
+        fill: url("#{% if include.random %}{{include.random}}{% endif %}_os-gradient-26");
+      }
+      .{% if include.random %}{{include.random}}{% endif %}_os-25 {
+        fill: url("#{% if include.random %}{{include.random}}{% endif %}_os-gradient-27");
+      }
+      .{% if include.random %}{{include.random}}{% endif %}_os-26 {
+        fill: url("#{% if include.random %}{{include.random}}{% endif %}_os-gradient-28");
+      }
+      .{% if include.random %}{{include.random}}{% endif %}_os-27 {
+        fill: url("#{% if include.random %}{{include.random}}{% endif %}_os-gradient-29");
+      }
+      .{% if include.random %}{{include.random}}{% endif %}_os-28 {
+        fill: url("#{% if include.random %}{{include.random}}{% endif %}_os-gradient-30");
+      }
+      .{% if include.random %}{{include.random}}{% endif %}_os-29 {
+        fill: url("#{% if include.random %}{{include.random}}{% endif %}_os-gradient-31");
+      }
+      .{% if include.random %}{{include.random}}{% endif %}_os-30 {
+        fill: url("#{% if include.random %}{{include.random}}{% endif %}_os-gradient-32");
+      }
+      .{% if include.random %}{{include.random}}{% endif %}_os-31 {
+        fill: url("#{% if include.random %}{{include.random}}{% endif %}_os-gradient-33");
+      }
+      .{% if include.random %}{{include.random}}{% endif %}_os-32 {
+        fill: url("#{% if include.random %}{{include.random}}{% endif %}_os-gradient-34");
+      }
+      .{% if include.random %}{{include.random}}{% endif %}_os-33 {
+        fill: url("#{% if include.random %}{{include.random}}{% endif %}_os-gradient-35");
+      }
+      .{% if include.random %}{{include.random}}{% endif %}_os-34 {
+        fill: url("#{% if include.random %}{{include.random}}{% endif %}_os-gradient-36");
+      }
+      .{% if include.random %}{{include.random}}{% endif %}_os-35 {
+        fill: url("#{% if include.random %}{{include.random}}{% endif %}_os-gradient-37");
+      }
+
+    </style>
+    <linearGradient id="{% if include.random %}{{include.random}}{% endif %}_os-gradient" x1="112.38" y1="61.97" x2="57.46" y2="116.89" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#41cdfc"/><stop offset="1" stop-color="#41cdfc"/></linearGradient><linearGradient id="{% if include.random %}{{include.random}}{% endif %}_os-gradient-2" x1="220.31" y1="0.12" x2="172.03" y2="48.39" xlink:href="#{% if include.random %}{{include.random}}{% endif %}_os-gradient"/><linearGradient id="{% if include.random %}{{include.random}}{% endif %}_os-gradient-3" x1="197.24" y1="66.8" x2="197.24" y2="336.71" xlink:href="#{% if include.random %}{{include.random}}{% endif %}_os-gradient"/><linearGradient id="{% if include.random %}{{include.random}}{% endif %}_os-gradient-4" x1="2461.77" y1="2086.81" x2="2461.77" y2="2356.72" gradientTransform="translate(2419.01 -2260.01) rotate(90)" xlink:href="#{% if include.random %}{{include.random}}{% endif %}_os-gradient"/><linearGradient id="{% if include.random %}{{include.random}}{% endif %}_os-gradient-5" x1="738.25" y1="-1483.82" x2="738.25" y2="-1213.91" gradientTransform="translate(-541.01 1550.62)" xlink:href="#{% if include.random %}{{include.random}}{% endif %}_os-gradient"/><linearGradient id="{% if include.random %}{{include.random}}{% endif %}_os-gradient-6" x1="911.15" y1="1545.81" x2="911.15" y2="1815.72" gradientTransform="translate(1878 -709.39) rotate(90)" xlink:href="#{% if include.random %}{{include.random}}{% endif %}_os-gradient"/>
+    <linearGradient id="{% if include.random %}{{include.random}}{% endif %}_os-gradient-7" x1="11.07" y1="201.76" x2="68.85" y2="201.76" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#41cdfc"/><stop offset="1" stop-color="#41cdfc"/></linearGradient><linearGradient id="{% if include.random %}{{include.random}}{% endif %}_os-gradient-8" x1="105.67" y1="293.33" x2="64.17" y2="334.83" xlink:href="#{% if include.random %}{{include.random}}{% endif %}_os-gradient"/><linearGradient id="{% if include.random %}{{include.random}}{% endif %}_os-gradient-9" x1="221.17" y1="354.02" x2="175.95" y2="399.24" xlink:href="#{% if include.random %}{{include.random}}{% endif %}_os-gradient"/><linearGradient id="{% if include.random %}{{include.random}}{% endif %}_os-gradient-10" x1="337.02" y1="286.62" x2="282.11" y2="341.54" xlink:href="#{% if include.random %}{{include.random}}{% endif %}_os-gradient"/><linearGradient id="{% if include.random %}{{include.random}}{% endif %}_os-gradient-11" x1="393.31" y1="179.04" x2="347.87" y2="224.48" xlink:href="#{% if include.random %}{{include.random}}{% endif %}_os-gradient"/><linearGradient id="{% if include.random %}{{include.random}}{% endif %}_os-gradient-12" x1="330.31" y1="68.69" x2="288.82" y2="110.18" xlink:href="#{% if include.random %}{{include.random}}{% endif %}_os-gradient"/><linearGradient id="{% if include.random %}{{include.random}}{% endif %}_os-gradient-13" x1="351.66" y1="47.34" x2="37.63" y2="361.37" xlink:href="#{% if include.random %}{{include.random}}{% endif %}_os-gradient"/><linearGradient id="{% if include.random %}{{include.random}}{% endif %}_os-gradient-14" x1="256.88" y1="-47.45" x2="-57.15" y2="266.58" xlink:href="#{% if include.random %}{{include.random}}{% endif %}_os-gradient"/><linearGradient id="{% if include.random %}{{include.random}}{% endif %}_os-gradient-17" x1="446.45" y1="142.12" x2="132.42" y2="456.15" xlink:href="#{% if include.random %}{{include.random}}{% endif %}_os-gradient"/><linearGradient id="{% if include.random %}{{include.random}}{% endif %}_os-gradient-18" x1="418.01" y1="113.69" x2="103.98" y2="427.72" xlink:href="#{% if include.random %}{{include.random}}{% endif %}_os-gradient"/><linearGradient id="{% if include.random %}{{include.random}}{% endif %}_os-gradient-19" x1="285.31" y1="-19.01" x2="-28.72" y2="295.02" xlink:href="#{% if include.random %}{{include.random}}{% endif %}_os-gradient"/><linearGradient id="{% if include.random %}{{include.random}}{% endif %}_os-gradient-20" x1="418.01" y1="113.69" x2="103.98" y2="427.72" gradientTransform="translate(-137.21 531.7) rotate(-90)" xlink:href="#{% if include.random %}{{include.random}}{% endif %}_os-gradient"/><linearGradient id="{% if include.random %}{{include.random}}{% endif %}_os-gradient-21" x1="285.31" y1="-19.01" x2="-28.72" y2="295.02" gradientTransform="translate(128.19 266.3) rotate(-90)" xlink:href="#{% if include.random %}{{include.random}}{% endif %}_os-gradient"/><linearGradient id="{% if include.random %}{{include.random}}{% endif %}_os-gradient-22" x1="276.82" y1="-27.51" x2="-37.21" y2="286.52" gradientTransform="translate(219.52 249.31) rotate(-90)" xlink:href="#{% if include.random %}{{include.random}}{% endif %}_os-gradient"/><linearGradient id="{% if include.random %}{{include.random}}{% endif %}_os-gradient-23" x1="325.71" y1="21.38" x2="11.68" y2="335.42" gradientTransform="translate(259.53 347.09) rotate(-90)" xlink:href="#{% if include.random %}{{include.random}}{% endif %}_os-gradient"/><linearGradient id="{% if include.random %}{{include.random}}{% endif %}_os-gradient-24" x1="377.62" y1="73.29" x2="63.58" y2="387.32" gradientTransform="translate(259.53 450.91) rotate(-90)" xlink:href="#{% if include.random %}{{include.random}}{% endif %}_os-gradient"/><linearGradient id="{% if include.random %}{{include.random}}{% endif %}_os-gradient-25" x1="427.27" y1="122.94" x2="113.23" y2="436.97" gradientTransform="translate(213.49 550.2) rotate(-90)" xlink:href="#{% if include.random %}{{include.random}}{% endif %}_os-gradient"/><linearGradient id="{% if include.random %}{{include.random}}{% endif %}_os-gradient-26" x1="460.67" y1="156.34" x2="146.63" y2="470.37" gradientTransform="translate(146.69 617.01) rotate(-90)" xlink:href="#{% if include.random %}{{include.random}}{% endif %}_os-gradient"/><linearGradient id="{% if include.random %}{{include.random}}{% endif %}_os-gradient-27" x1="483.69" y1="179.36" x2="169.65" y2="493.39" gradientTransform="translate(47.39 663.04) rotate(-90)" xlink:href="#{% if include.random %}{{include.random}}{% endif %}_os-gradient"/><linearGradient id="{% if include.random %}{{include.random}}{% endif %}_os-gradient-28" x1="483.69" y1="179.36" x2="169.65" y2="493.39" gradientTransform="translate(-56.42 663.04) rotate(-90)" xlink:href="#{% if include.random %}{{include.random}}{% endif %}_os-gradient"/><linearGradient id="{% if include.random %}{{include.random}}{% endif %}_os-gradient-29" x1="463.6" y1="159.27" x2="149.57" y2="473.3" gradientTransform="translate(-149.85 622.87) rotate(-90)" xlink:href="#{% if include.random %}{{include.random}}{% endif %}_os-gradient"/><linearGradient id="{% if include.random %}{{include.random}}{% endif %}_os-gradient-30" x1="427.27" y1="122.94" x2="113.23" y2="436.97" gradientTransform="translate(-222.52 550.2) rotate(-90)" xlink:href="#{% if include.random %}{{include.random}}{% endif %}_os-gradient"/><linearGradient id="{% if include.random %}{{include.random}}{% endif %}_os-gradient-31" x1="377.62" y1="73.29" x2="63.58" y2="387.32" gradientTransform="translate(-268.56 450.91) rotate(-90)" xlink:href="#{% if include.random %}{{include.random}}{% endif %}_os-gradient"/><linearGradient id="{% if include.random %}{{include.random}}{% endif %}_os-gradient-32" x1="325.71" y1="21.38" x2="11.68" y2="335.42" gradientTransform="translate(-268.56 347.09) rotate(-90)" xlink:href="#{% if include.random %}{{include.random}}{% endif %}_os-gradient"/><linearGradient id="{% if include.random %}{{include.random}}{% endif %}_os-gradient-33" x1="279" y1="-25.33" x2="-35.04" y2="288.7" gradientTransform="translate(-228.39 253.66) rotate(-90)" xlink:href="#{% if include.random %}{{include.random}}{% endif %}_os-gradient"/><linearGradient id="{% if include.random %}{{include.random}}{% endif %}_os-gradient-34" x1="239.73" y1="-64.6" x2="-74.3" y2="249.43" gradientTransform="translate(-149.85 175.13) rotate(-90)" xlink:href="#{% if include.random %}{{include.random}}{% endif %}_os-gradient"/><linearGradient id="{% if include.random %}{{include.random}}{% endif %}_os-gradient-35" x1="219.64" y1="-84.69" x2="-94.39" y2="229.35" gradientTransform="translate(-56.42 134.96) rotate(-90)" xlink:href="#{% if include.random %}{{include.random}}{% endif %}_os-gradient"/><linearGradient id="{% if include.random %}{{include.random}}{% endif %}_os-gradient-36" x1="219.64" y1="-84.69" x2="-94.39" y2="229.35" gradientTransform="translate(47.39 134.96) rotate(-90)" xlink:href="#{% if include.random %}{{include.random}}{% endif %}_os-gradient"/><linearGradient id="{% if include.random %}{{include.random}}{% endif %}_os-gradient-37" x1="237.47" y1="-66.86" x2="-76.56" y2="247.17" gradientTransform="translate(145.34 170.61) rotate(-90)" xlink:href="#{% if include.random %}{{include.random}}{% endif %}_os-gradient"/></defs>
+  <title>onesite</title>
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="Layer_1-2" data-name="Layer 1"><polygon class="{% if include.random %}{{include.random}}{% endif %}_os-1" points="105.67 110.18 38.81 98.24 39.73 93.13 99.25 103.76 88.62 44.24 93.73 43.33 105.67 110.18"/><polygon class="{% if include.random %}{{include.random}}{% endif %}_os-2" points="197.26 73.62 155.84 14.12 160.1 11.16 197.23 64.49 232.27 13.43 236.55 16.36 197.26 73.62"/><rect class="{% if include.random %}{{include.random}}{% endif %}_os-3" x="194.65" y="66.8" width="5.19" height="269.91"/><rect class="{% if include.random %}{{include.random}}{% endif %}_os-4" x="62.29" y="199.16" width="269.91" height="5.19"/><rect class="{% if include.random %}{{include.random}}{% endif %}_os-5" x="194.65" y="66.8" width="5.19" height="269.91" transform="translate(-84.89 198.56) rotate(-45)"/><rect class="{% if include.random %}{{include.random}}{% endif %}_os-6" x="62.29" y="199.16" width="269.91" height="5.19" transform="translate(-84.89 198.57) rotate(-45)"/><polygon class="{% if include.random %}{{include.random}}{% endif %}_os-7" points="14.2 243.09 11.07 238.96 60.24 201.76 11.07 164.56 14.2 160.42 68.85 201.76 14.2 243.09"/><polygon class="{% if include.random %}{{include.random}}{% endif %}_os-8" points="93.73 360.19 88.62 359.28 99.25 299.75 39.73 310.38 38.81 305.27 105.67 293.33 93.73 360.19"/><polygon class="{% if include.random %}{{include.random}}{% endif %}_os-9" points="234.44 387.93 197.41 338.99 166.03 387.77 161.66 384.96 197.07 329.93 238.58 384.8 234.44 387.93"/><polygon class="{% if include.random %}{{include.random}}{% endif %}_os-10" points="300.76 360.19 288.82 293.33 355.68 305.27 354.76 310.38 295.24 299.75 305.87 359.28 300.76 360.19"/><polygon class="{% if include.random %}{{include.random}}{% endif %}_os-11" points="380.44 237.34 325.15 201.76 380.44 166.17 383.25 170.54 334.74 201.76 383.25 232.98 380.44 237.34"/><polygon class="{% if include.random %}{{include.random}}{% endif %}_os-12" points="288.82 110.18 300.76 43.33 305.87 44.24 295.24 103.76 354.76 93.13 355.68 98.24 288.82 110.18"/><rect class="{% if include.random %}{{include.random}}{% endif %}_os-13" x="145.34" y="149.85" width="103.81" height="103.81" rx="51.91" ry="51.91"/><rect class="{% if include.random %}{{include.random}}{% endif %}_os-14" x="89.82" y="94.33" width="25.28" height="25.28" rx="12.64" ry="12.64"/><rect class="{% if include.random %}{{include.random}}{% endif %}_os-13" x="279.39" y="94.33" width="25.28" height="25.28" rx="12.64" ry="12.64"/><rect class="{% if include.random %}{{include.random}}{% endif %}_os-13" x="89.82" y="283.9" width="25.28" height="25.28" rx="12.64" ry="12.64"/><rect class="{% if include.random %}{{include.random}}{% endif %}_os-15" x="279.39" y="283.9" width="25.28" height="25.28" rx="12.64" ry="12.64"/><rect class="{% if include.random %}{{include.random}}{% endif %}_os-16" x="317.3" y="189.12" width="25.28" height="25.28" rx="12.64" ry="12.64"/><rect class="{% if include.random %}{{include.random}}{% endif %}_os-17" x="51.91" y="189.12" width="25.28" height="25.28" rx="12.64" ry="12.64"/><rect class="{% if include.random %}{{include.random}}{% endif %}_os-18" x="184.61" y="321.82" width="25.28" height="25.28" rx="12.64" ry="12.64" transform="translate(531.7 137.21) rotate(90)"/><rect class="{% if include.random %}{{include.random}}{% endif %}_os-19" x="184.61" y="56.42" width="25.28" height="25.28" rx="12.64" ry="12.64" transform="translate(266.3 -128.19) rotate(90)"/><rect class="{% if include.random %}{{include.random}}{% endif %}_os-20" x="221.77" y="2.26" width="25.28" height="25.28" rx="12.64" ry="12.64" transform="translate(249.31 -219.52) rotate(90)"/><rect class="{% if include.random %}{{include.random}}{% endif %}_os-21" x="290.67" y="31.14" width="25.28" height="25.28" rx="12.64" ry="12.64" transform="translate(347.09 -259.53) rotate(90)"/><rect class="{% if include.random %}{{include.random}}{% endif %}_os-22" x="342.58" y="83.05" width="25.28" height="25.28" rx="12.64" ry="12.64" transform="translate(450.91 -259.53) rotate(90)"/><rect class="{% if include.random %}{{include.random}}{% endif %}_os-23" x="369.21" y="155.72" width="25.28" height="25.28" rx="12.64" ry="12.64" transform="translate(550.2 -213.49) rotate(90)"/><rect class="{% if include.random %}{{include.random}}{% endif %}_os-24" x="369.21" y="222.52" width="25.28" height="25.28" rx="12.64" ry="12.64" transform="translate(617.01 -146.69) rotate(90)"/><rect class="{% if include.random %}{{include.random}}{% endif %}_os-25" x="342.58" y="295.19" width="25.28" height="25.28" rx="12.64" ry="12.64" transform="translate(663.04 -47.39) rotate(90)"/><rect class="{% if include.random %}{{include.random}}{% endif %}_os-26" x="290.67" y="347.09" width="25.28" height="25.28" rx="12.64" ry="12.64" transform="translate(663.04 56.42) rotate(90)"/><rect class="{% if include.random %}{{include.random}}{% endif %}_os-27" x="223.87" y="373.72" width="25.28" height="25.28" rx="12.64" ry="12.64" transform="translate(622.87 149.85) rotate(90)"/><rect class="{% if include.random %}{{include.random}}{% endif %}_os-28" x="151.2" y="373.72" width="25.28" height="25.28" rx="12.64" ry="12.64" transform="translate(550.2 222.52) rotate(90)"/><rect class="{% if include.random %}{{include.random}}{% endif %}_os-29" x="78.54" y="347.09" width="25.28" height="25.28" rx="12.64" ry="12.64" transform="translate(450.91 268.56) rotate(90)"/><rect class="{% if include.random %}{{include.random}}{% endif %}_os-30" x="26.63" y="295.19" width="25.28" height="25.28" rx="12.64" ry="12.64" transform="translate(347.09 268.56) rotate(90)"/><rect class="{% if include.random %}{{include.random}}{% endif %}_os-31" y="228.39" width="25.28" height="25.28" rx="12.64" ry="12.64" transform="translate(253.66 228.39) rotate(90)"/><rect class="{% if include.random %}{{include.random}}{% endif %}_os-32" y="149.85" width="25.28" height="25.28" rx="12.64" ry="12.64" transform="translate(175.13 149.85) rotate(90)"/><rect class="{% if include.random %}{{include.random}}{% endif %}_os-33" x="26.63" y="83.05" width="25.28" height="25.28" rx="12.64" ry="12.64" transform="translate(134.96 56.42) rotate(90)"/><rect class="{% if include.random %}{{include.random}}{% endif %}_os-34" x="78.54" y="31.14" width="25.28" height="25.28" rx="12.64" ry="12.64" transform="translate(134.96 -47.39) rotate(90)"/><rect class="{% if include.random %}{{include.random}}{% endif %}_os-35" x="145.34" width="25.28" height="25.28" rx="12.64" ry="12.64" transform="translate(170.61 -145.34) rotate(90)"/></g>
+  </g>
+</svg>

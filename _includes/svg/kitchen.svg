@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 432 432" width="{{include.width}}">
+  <defs>
+    <style>
+      .kitchen-1 {
+        fill: #6ba0d4;
+      }
+      .kitchen-2 {
+        fill: #9cbfe3;
+      }
+      .kitchen-3 {
+        fill: #3980c6;
+      }
+      .kitchen-4 {
+        fill: #cedff1;
+      }
+    </style>
+  </defs>
+  <title>kitchen</title>
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="Stocked_Kitchen" data-name="Stocked Kitchen"><rect class="kitchen-1" x="144" width="288" height="432"/><rect class="kitchen-2" x="144" width="144" height="432"/><rect class="kitchen-1" x="171" y="135" width="90" height="90"/><rect class="kitchen-3" x="171" y="135" width="90" height="7.5"/><rect class="kitchen-3" x="178.5" y="142.5" width="30" height="60"/><rect class="kitchen-3" x="223.5" y="142.5" width="30" height="60"/><polygon class="kitchen-4" points="225 171 180 171 189 225 216 225 225 171"/><polygon class="kitchen-2" points="186.97 192.67 191.75 221.33 213.25 221.33 218.03 192.67 186.97 192.67"/><rect class="kitchen-1" x="270" y="135" width="9" height="108" rx="4.5" ry="4.5"/><rect class="kitchen-3" x="297" y="135" width="9" height="108" rx="4.5" ry="4.5"/><rect class="kitchen-1" x="144" y="297" width="288" height="9"/><path class="kitchen-1" d="M202.5,324H288a0,0,0,0,1,0,0v9a0,0,0,0,1,0,0H202.5a4.5,4.5,0,0,1-4.5-4.5v0A4.5,4.5,0,0,1,202.5,324Z"/><path class="kitchen-3" d="M288,324h85.5a4.5,4.5,0,0,1,4.5,4.5v0a4.5,4.5,0,0,1-4.5,4.5H288a0,0,0,0,1,0,0v-9A0,0,0,0,1,288,324Z"/><rect class="kitchen-1" y="207" width="144" height="225"/><path class="kitchen-3" d="M77,207H67V117a23,23,0,0,1,46,0v9H103v-9a13,13,0,0,0-26,0Z"/><polygon class="kitchen-3" points="50 207 40 207 40 185 18 185 18 175 50 175 50 207"/><polygon class="kitchen-3" points="104 207 94 207 94 175 126 175 126 185 104 185 104 207"/><circle class="kitchen-3" cx="40.5" cy="238.5" r="4.5"/><circle class="kitchen-3" cx="103.5" cy="238.5" r="4.5"/><rect class="kitchen-3" y="261" width="144" height="9"/><rect class="kitchen-3" x="18" y="279" width="36" height="9"/><rect class="kitchen-3" x="90" y="279" width="36" height="9"/><rect class="kitchen-3" x="67.5" y="270" width="9" height="162"/></g>
+  </g>
+</svg>

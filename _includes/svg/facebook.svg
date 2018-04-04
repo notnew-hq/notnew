@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8.31 16">
+  <defs>
+    <style>
+      .social-icon {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <title>Adaptiva on Facebook</title>
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="Layer_1-2" data-name="Layer 1"><path class="social-icon" d="M5.37,16V8.68H7.83l.37-2.79H5.37V4.07c0-.82.22-1.38,1.4-1.38H8.31V.11A21.42,21.42,0,0,0,6.1,0,3.42,3.42,0,0,0,2.46,3.77V5.89H0V8.68H2.46V16Z"/></g>
+  </g>
+</svg>
