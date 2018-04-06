@@ -79,7 +79,7 @@ function Product(title, desc, img, price, sku, quantity) {
 	this._addToCart = function(size, quantity) {
 		if (checkCart(this)) {
 			$.each(shoppingCart.items, function(i) {
-				if (shoppingCart.items[i].sku === sku && shoppingCart.items[i].size === this.size) {
+				if (shoppingCart.items[i].sku === sku) {
 					shoppingCart.items[i].quantity += quantity;
 				}
 			});
