@@ -6,9 +6,13 @@ html, body {
   font-size: 16px;
   overflow-x: hidden;
 }
+body {
+  padding-top: 110px;
+}
 // Kokkaku framework
 {% include scss/kokkaku/kokkaku.scss %}
 
 // Page specific styles
 // ----------
 // Homepage
+{%include scss/product.scss %}

@@ -4,6 +4,9 @@ html, body {
   font-size: 16px;
   overflow-x: hidden; }
 
+body {
+  padding-top: 110px; }
+
 * {
   box-sizing: border-box; }
   *:focus {
@@ -1661,3 +1664,6 @@ form#newsletter {
   .footer-social-link:hover svg path,
   .footer-social-link:hover svg polygon {
     fill: #41cdfc; }
+
+#product-img {
+  width: 100%; }

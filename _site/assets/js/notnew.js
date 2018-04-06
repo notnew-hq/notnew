@@ -15,7 +15,7 @@ checkCart = function(item) {
 	var exists = false;
 	console.log('Checking for item...');
 	$.each(shoppingCart.items, function(i) {
-		if (shoppingCart.items[i].sku === item.sku) {
+		if (shoppingCart.items[i].sku === item.sku && shoppingCart.items[i].size === item.size) {
 			exists = true;
 			console.log('Item exists: ', shoppingCart.items[i]);
 			return exists;
@@ -77,20 +77,23 @@ function Product(title, desc, img, price, sku, quantity) {
 	this.price = price;
 	this.sku = sku;
 	this.quantity = quantity;
+	this.size = null;
+
 	// create DOM nodes
 	product = $('<div></div>');
 	image = $('<img>');
 	button = $('<a></a>');
 	var $this=this;
 	// methods
-	this._addToCart = function() {
+	this._addToCart = function(size, quantity) {
 		if (checkCart(this)) {
 			$.each(shoppingCart.items, function(i) {
-				if (shoppingCart.items[i].sku === sku) {
-					shoppingCart.items[i].quantity += 1;
+				if (shoppingCart.items[i].sku === sku && shoppingCart.items[i].size === this.size) {
+					shoppingCart.items[i].quantity += quantity;
 				}
 			});
 		} else {
+			this.size = size;
 			shoppingCart.items.push(this);
 		}
 		updateCart();
@@ -98,7 +101,7 @@ function Product(title, desc, img, price, sku, quantity) {
 	}
 	this._removeFromCart = function() {
 		$.each(shoppingCart.items, function(i) {
-			if (shoppingCart.items[i].sku === sku) {
+			if (shoppingCart.items[i].sku === sku && shoppingCart.items[i].size === this.size) {
 				if (shoppingCart.items[i].quantity < 2) {
 					console.log('All ' + shoppingCart.items[i].title + ' removed from cart');
 					$('.product[data-sku="' + sku + '"]').remove();
@@ -131,12 +134,12 @@ function Product(title, desc, img, price, sku, quantity) {
 		);
 		button
 		.attr({
-			'href': 'javascript:void(0)',
+			'href': '/product/?productId=' + sku,
 			'class': 'button',
 		})
-		.text('Add to Cart')
-		.appendTo(product)
-		.click($.proxy(this._addToCart, this));
+		.text('View Item')
+		.appendTo(product);
+		// .click($.proxy(this._addToCart, this));
 		product.appendTo(target);
 	};
 	this._displayCart = function(target) {
