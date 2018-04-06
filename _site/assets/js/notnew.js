@@ -7,30 +7,6 @@ function isTouch() { // check to see if touch screen
     return false;
   }
 }
-var allProducts = [
-  {
-		title: 'Sweatshirt',
-		desc: 'Black sweatshirt with print on chest and right arm.',
-		img: '/assets/img/2018-03-08-not-new-img_157.jpg',
-		price: '40',
-    sku: 'NNH001'
-	},
-	{
-		title: 'Sweatshirt',
-		desc: 'Blue sweatshirt with yellow front and back print.',
-		img: '/assets/img/2018-03-08-not-new-img_6.jpg',
-		price: '40',
-    sku: 'NNH002'
-	},
-	{
-		title: 'T-shirt',
-		desc: 'Black shirt with front and back green print.',
-		img: '/assets/img/2018-03-08-not-new-img_3.jpg',
-		price: '25',
-    sku: 'NNH003'
-	},
-];
-
 var shoppingCart = {
 	items:[],
 	total:0,
@@ -124,9 +100,9 @@ function Product(title, desc, img, price, sku, quantity) {
 		$.each(shoppingCart.items, function(i) {
 			if (shoppingCart.items[i].sku === sku) {
 				if (shoppingCart.items[i].quantity < 2) {
-					shoppingCart.items.splice(i, 1);
 					console.log('All ' + shoppingCart.items[i].title + ' removed from cart');
 					$('.product[data-sku="' + sku + '"]').remove();
+					shoppingCart.items.splice(i, 1);
 					return;
 				} else {
 					shoppingCart.items[i].quantity -= 1;

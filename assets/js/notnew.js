@@ -9,7 +9,6 @@ function isTouch() { // check to see if touch screen
     return false;
   }
 }
-{% include js/products.js %}
 {% include js/shop.js %}
 jQuery(document).ready(function($) { // DOM ready pants
 

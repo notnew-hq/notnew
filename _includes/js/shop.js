@@ -91,9 +91,9 @@ function Product(title, desc, img, price, sku, quantity) {
 		$.each(shoppingCart.items, function(i) {
 			if (shoppingCart.items[i].sku === sku) {
 				if (shoppingCart.items[i].quantity < 2) {
-					shoppingCart.items.splice(i, 1);
 					console.log('All ' + shoppingCart.items[i].title + ' removed from cart');
 					$('.product[data-sku="' + sku + '"]').remove();
+					shoppingCart.items.splice(i, 1);
 					return;
 				} else {
 					shoppingCart.items[i].quantity -= 1;
