@@ -1,7 +1,22 @@
-
 var shoppingCart = {
 	items:[],
 	total:0,
+},
+checkCart = function(item) {
+	var exists = false;
+	console.log('Checking for item...');
+	$.each(shoppingCart.items, function(i) {
+		if (shoppingCart.items[i].sku === item.sku) {
+			exists = true;
+			console.log('Item exists: ', shoppingCart.items[i]);
+			return exists;
+		}
+	});
+	if (exists) {
+		return true
+	} else {
+		return false;
+	}
 },
 checkStorage = function(key) {
 	// localStorage only supports strings so check for valid value
@@ -10,25 +25,28 @@ checkStorage = function(key) {
 		shoppingCart = JSON.parse(localStorage[key]);
 		// log what's in storage
 		console.log('Cached result:', shoppingCart);
-		shoppingCart.updateTotal = updateTotal;
+		shoppingCart.updateCart = updateCart;
 		return shoppingCart;
 	} else {
 		console.log('Nothing for "' + key + '" DAWG' );
 		return false;
 	}
 },
-updateTotal = function(){
+updateStorage = function() {
+	localStorage.shoppingCart = JSON.stringify(shoppingCart);
+},
+updateCart = function(){
 	var total = 0;
 	$.each(shoppingCart.items, function(i){
-		total += Number(shoppingCart.items[i].price);
+		total += Number(shoppingCart.items[i].price) * shoppingCart.items[i].quantity;
 	});
 	shoppingCart.total = total;
-	console.log('cart total:', shoppingCart.total);
+	console.log('Updated cart:', shoppingCart);
 };
 
 if (checkStorage('shoppingCart')){
 	$.each(shoppingCart.items, function(i) {
-		shoppingCart.items[i] = new Product(shoppingCart.items[i].title, shoppingCart.items[i].desc, shoppingCart.items[i].img, shoppingCart.items[i].price, shoppingCart.items[i].sku);
+		shoppingCart.items[i] = new Product(shoppingCart.items[i].title, shoppingCart.items[i].desc, shoppingCart.items[i].img, shoppingCart.items[i].price, shoppingCart.items[i].sku, shoppingCart.items[i].quantity);
 		shoppingCart.items[i]._displayCart('#cart-contents');
 	});
 }
@@ -37,18 +55,19 @@ if (checkStorage('shoppingCart')){
 for(var i = 0; i < allProducts.length; i++) {
 	// construct new Product on each loop
 	// read properties from each index in shoppingCart and apply as parameters to Product constructor
-	allProducts[i] = new Product(allProducts[i].title, allProducts[i].desc, allProducts[i].img, allProducts[i].price, allProducts[i].sku);
+	allProducts[i] = new Product(allProducts[i].title, allProducts[i].desc, allProducts[i].img, allProducts[i].price, allProducts[i].sku, 1);
   allProducts[i]._display('#products');
 }
 
 /* Product Prototype */
-function Product(title, desc, img, price, sku) {
+function Product(title, desc, img, price, sku, quantity) {
 	// set object properties
 	this.title = title;
 	this.desc = desc;
 	this.img = img;
 	this.price = price;
 	this.sku = sku;
+	this.quantity = quantity;
 	// create DOM nodes
 	product = $('<div></div>');
 	image = $('<img>');
@@ -56,22 +75,36 @@ function Product(title, desc, img, price, sku) {
 	var $this=this;
 	// methods
 	this._addToCart = function() {
-		shoppingCart.items.push(this);
-		localStorage.shoppingCart = JSON.stringify(shoppingCart);
-		console.log(shoppingCart.items);
-		updateTotal();
+		if (checkCart(this)) {
+			$.each(shoppingCart.items, function(i) {
+				if (shoppingCart.items[i].sku === sku) {
+					shoppingCart.items[i].quantity += 1;
+				}
+			});
+		} else {
+			shoppingCart.items.push(this);
+		}
+		updateCart();
+		updateStorage();
 	}
 	this._removeFromCart = function() {
 		$.each(shoppingCart.items, function(i) {
-			if (sku === shoppingCart.items[i].sku) {
-				shoppingCart.items.splice(i, 1);
-				localStorage.shoppingCart = JSON.stringify(shoppingCart);
-				$('.product[data-sku="' + sku + '"]').remove();
-				console.log('Removed from cart:', this);
+			if (shoppingCart.items[i].sku === sku) {
+				if (shoppingCart.items[i].quantity < 2) {
+					shoppingCart.items.splice(i, 1);
+					console.log('All ' + shoppingCart.items[i].title + ' removed from cart');
+					$('.product[data-sku="' + sku + '"]').remove();
+					return;
+				} else {
+					shoppingCart.items[i].quantity -= 1;
+					$('.cartItem[data-sku="' + sku + '"]').find('.cartItem-quantity').html(shoppingCart.items[i].quantity);
+					return;
+				}
 			}
-			console.log('Updated cart:', shoppingCart.items);
 		});
-		updateTotal();
+		console.log('Removed from cart:', this);
+		updateCart();
+		updateStorage();
 	}
 	this._display = function(target) {
 		image.attr({
@@ -102,14 +135,14 @@ function Product(title, desc, img, price, sku) {
 			'src': img,
 		});
 		product.attr({
-			'class': 'j-row vertical-center-row space-between product',
+			'class': 'j-row vertical-center-row space-between product cartItem',
 			'data-sku': sku
 		})
 		.html(
-			'<img class="j-col j-col-2" src="' + img + '" alt="' + title + '">' +
-			'<div class="j-col j-col-5"><span>' + title + '</span></div>' +
-			'<div class="j-col j-col-2"><span>' + price + '</span></div>' +
-			'<div class="j-col j-col-2"><span>1</span></div>'
+			'<img class="j-col j-col-2 cartItem-img" src="' + img + '" alt="' + title + '">' +
+			'<div class="j-col j-col-5"><span class="cartItem-title">' + title + '</span></div>' +
+			'<div class="j-col j-col-2"><span class="cartItem-price">' + price + '</span></div>' +
+			'<div class="j-col j-col-2"><span class="cartItem-quantity">' + quantity + '</div>'
 		);
 		button
 		.attr({
