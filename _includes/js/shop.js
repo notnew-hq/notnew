@@ -2,13 +2,15 @@ var shoppingCart = {
 	items:[],
 	total:0,
 },
+// check if item is already in cart
 checkCart = function(item) {
 	var exists = false;
 	console.log('Checking for item...');
 	$.each(shoppingCart.items, function(i) {
+		// item must match SKU and size to qualify as duplicate
 		if (shoppingCart.items[i].sku === item.sku && shoppingCart.items[i].size === item.size) {
 			exists = true;
-			console.log('Item exists: ', shoppingCart.items[i]);
+			console.log('Item already in cart: ', shoppingCart.items[i].title);
 			return exists;
 		}
 	});
@@ -24,8 +26,7 @@ checkStorage = function(key) {
 		// restore state of shopping cart
 		shoppingCart = JSON.parse(localStorage[key]);
 		// log what's in storage
-		console.log('Cached result:', shoppingCart);
-		shoppingCart.updateCart = updateCart;
+		console.log('Existing Cart:', shoppingCart);
 		return shoppingCart;
 	} else {
 		console.log('Nothing for "' + key + '" DAWG' );
@@ -37,30 +38,49 @@ updateStorage = function() {
 },
 updateCart = function(){
 	var total = 0;
-	$.each(shoppingCart.items, function(i){
-		total += Number(shoppingCart.items[i].price) * shoppingCart.items[i].quantity;
-	});
+	if (shoppingCart.items.length > 0) {
+		$.each(shoppingCart.items, function(i){
+			// add up the price of each item in cart times their quantities
+			total += Number(shoppingCart.items[i].price) * shoppingCart.items[i].quantity;
+		});
+	}
 	shoppingCart.total = total;
 	console.log('Updated cart:', shoppingCart);
 };
 
+// return Product method access to objects in storage
 if (checkStorage('shoppingCart')){
 	$.each(shoppingCart.items, function(i) {
-		shoppingCart.items[i] = new Product(shoppingCart.items[i].title, shoppingCart.items[i].desc, shoppingCart.items[i].img, shoppingCart.items[i].price, shoppingCart.items[i].sku, shoppingCart.items[i].quantity);
-		shoppingCart.items[i]._displayCart('#cart-contents');
+		// construct new Product in place of each object in shoppingCart
+		shoppingCart.items[i] = new Product(
+			shoppingCart.items[i].title,
+			shoppingCart.items[i].desc,
+			shoppingCart.items[i].img,
+			shoppingCart.items[i].price,
+			shoppingCart.items[i].sku,
+			shoppingCart.items[i].quantity,
+			shoppingCart.items[i].size
+		);
+		// display cart items and append numbers to IDs on product DOM nodes
+		shoppingCart.items[i]._displayCart('#cart-contents', (i + 1));
 	});
 }
 
-// loop through products, add to page, and log to console
-for(var i = 0; i < allProducts.length; i++) {
-	// construct new Product on each loop
+// new Product object for each product in products.js
+$.each(allProducts, function(i) {
 	// read properties from each index in shoppingCart and apply as parameters to Product constructor
-	allProducts[i] = new Product(allProducts[i].title, allProducts[i].desc, allProducts[i].img, allProducts[i].price, allProducts[i].sku, 1);
+	allProducts[i] = new Product(
+		allProducts[i].title,
+		allProducts[i].desc,
+		allProducts[i].img,
+		allProducts[i].price,
+		allProducts[i].sku,
+		1);
   allProducts[i]._display('#products');
-}
+});
 
 /* Product Prototype */
-function Product(title, desc, img, price, sku, quantity) {
+function Product(title, desc, img, price, sku, quantity, size=null) {
 	// set object properties
 	this.title = title;
 	this.desc = desc;
@@ -68,47 +88,54 @@ function Product(title, desc, img, price, sku, quantity) {
 	this.price = price;
 	this.sku = sku;
 	this.quantity = quantity;
-	this.size = null;
-
+	this.size = size;
 	// create DOM nodes
 	product = $('<div></div>');
 	image = $('<img>');
 	button = $('<a></a>');
-	var $this=this;
 	// methods
-	this._addToCart = function(size, quantity) {
+	this._addToCart = function(s, q) {
+		// check to see if product is already in cart
 		if (checkCart(this)) {
+			console.log('Adding ' + q + ' ' + title + '(s) to cart...');
 			$.each(shoppingCart.items, function(i) {
-				if (shoppingCart.items[i].sku === sku) {
-					shoppingCart.items[i].quantity += quantity;
+				// find existing item in cart and increment quantity
+				if (shoppingCart.items[i].sku === sku && shoppingCart.items[i].size === s) {
+					shoppingCart.items[i].quantity += q;
 				}
 			});
 		} else {
-			this.size = size;
+			// set size property and add new product to cart
+			this.size = s;
 			shoppingCart.items.push(this);
 		}
+		// save state
 		updateCart();
 		updateStorage();
-	}
+	};
 	this._removeFromCart = function() {
+		console.log('Removing from cart...', this);
 		$.each(shoppingCart.items, function(i) {
-			if (shoppingCart.items[i].sku === sku && shoppingCart.items[i].size === this.size) {
-				if (shoppingCart.items[i].quantity < 2) {
-					console.log('All ' + shoppingCart.items[i].title + ' removed from cart');
-					$('.product[data-sku="' + sku + '"]').remove();
-					shoppingCart.items.splice(i, 1);
-					return;
-				} else {
+			// find item in cart and differentiate sizes
+			if (shoppingCart.items[i].sku === sku && shoppingCart.items[i].size === size) {
+				// remove one at a time until there are no more
+				if (shoppingCart.items[i].quantity > 1) {
+					// adjust quantity in object and cart UI
 					shoppingCart.items[i].quantity -= 1;
-					$('.cartItem[data-sku="' + sku + '"]').find('.cartItem-quantity').html(shoppingCart.items[i].quantity);
-					return;
+					$('.cartItem[data-size="' + size + '"][data-sku="' + sku + '"]').find('.cartItem-quantity').text(shoppingCart.items[i].quantity);
+				} else {
+					console.log('All ' + shoppingCart.items[i].title + ' removed from cart');
+					// remove corresponding DOM node
+					$('.cartItem[data-size="' + size + '"][data-sku="' + sku + '"]').remove();
+					// remove Product from cart items
+					shoppingCart.items.splice(i, 1);
+					return false;
 				}
 			}
 		});
-		console.log('Removed from cart:', this);
 		updateCart();
 		updateStorage();
-	}
+	};
 	this._display = function(target) {
 		image.attr({
 			'src': img,
@@ -130,20 +157,22 @@ function Product(title, desc, img, price, sku, quantity) {
 		})
 		.text('View Item')
 		.appendTo(product);
-		// .click($.proxy(this._addToCart, this));
 		product.appendTo(target);
 	};
-	this._displayCart = function(target) {
+	this._displayCart = function(target, id) {
 		image.attr({
 			'src': img,
 		});
 		product.attr({
 			'class': 'j-row vertical-center-row space-between product cartItem',
-			'data-sku': sku
+			'id': 'cart-item-' + id,
+			'data-sku': sku,
+			'data-size': size,
 		})
 		.html(
 			'<img class="j-col j-col-2 cartItem-img" src="' + img + '" alt="' + title + '">' +
-			'<div class="j-col j-col-5"><span class="cartItem-title">' + title + '</span></div>' +
+			'<div class="j-col j-col-4"><span class="cartItem-title">' + title + '</span></div>' +
+			'<div class="j-col j-col-4"><span class="cartItem-size">' + size + '</span></div>' +
 			'<div class="j-col j-col-2"><span class="cartItem-price">' + price + '</span></div>' +
 			'<div class="j-col j-col-2"><span class="cartItem-quantity">' + quantity + '</div>'
 		);
@@ -157,14 +186,4 @@ function Product(title, desc, img, price, sku, quantity) {
 		.click($.proxy(this._removeFromCart, this));
 		product.appendTo(target);
 	};
-	this._log = function(n) {
-    console.log(
-    	'Logged product #' + (n + 1) + '!\n' +
-      title + '\n' +
-      desc + '\n' +
-      img + '\n' +
-      price +'\n' +
-			sku
-    );
-  };
 }
