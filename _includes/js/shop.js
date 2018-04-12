@@ -41,7 +41,7 @@ updateStorage = function() {
 },
 cartInfo = function() {
 	// Display cart total and calculate shipping
-	$('.cart-subtotal').text(shoppingCart.subTotal);
+	$('.cart-subtotal').text('$' + shoppingCart.subTotal);
 	if (shoppingCart.totalItems > 1 && shoppingCart.totalItems < 5) {
 		shoppingCart.shipping = 15;
 	} else if (shoppingCart.totalItems > 5) {
@@ -49,8 +49,8 @@ cartInfo = function() {
 	} else {
 		shoppingCart.shipping = 8;
 	}
-	$('.cart-shipping').text(shoppingCart.shipping);
-	$('.cart-total').text(shoppingCart.subTotal + shoppingCart.shipping);
+	$('.cart-shipping').text('$' + shoppingCart.shipping);
+	$('.cart-total').text('$' + (shoppingCart.subTotal + shoppingCart.shipping));
 },
 updateCart = function(){
 	var
