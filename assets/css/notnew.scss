@@ -12,6 +12,10 @@ body {
 // Kokkaku framework
 {% include scss/kokkaku/kokkaku.scss %}
 
+.cartItem {
+  margin-bottom: $spacing-small;
+}
+
 // Page specific styles
 // ----------
 // Homepage

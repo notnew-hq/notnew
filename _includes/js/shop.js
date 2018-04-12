@@ -1,7 +1,10 @@
 var shoppingCart = {
 	items:[],
-	total:0,
+	totalItems: 0,
+	subTotal: 0,
+	shipping: 0,
 },
+max_items = 100,
 // check if item is already in cart
 checkCart = function(item) {
 	var exists = false;
@@ -36,15 +39,33 @@ checkStorage = function(key) {
 updateStorage = function() {
 	localStorage.shoppingCart = JSON.stringify(shoppingCart);
 },
+cartInfo = function() {
+	// Display cart total and calculate shipping
+	$('.cart-subtotal').text(shoppingCart.subTotal);
+	if (shoppingCart.totalItems > 1 && shoppingCart.totalItems < 5) {
+		shoppingCart.shipping = 15;
+	} else if (shoppingCart.totalItems > 5) {
+		shoppingCart.shipping = 20;
+	} else {
+		shoppingCart.shipping = 8;
+	}
+	$('.cart-shipping').text(shoppingCart.shipping);
+	$('.cart-total').text(shoppingCart.subTotal + shoppingCart.shipping);
+},
 updateCart = function(){
-	var total = 0;
+	var
+	shipping = 0,
+	subTotal = 0,
+	totalItems = 0;
 	if (shoppingCart.items.length > 0) {
 		$.each(shoppingCart.items, function(i){
 			// add up the price of each item in cart times their quantities
-			total += Number(shoppingCart.items[i].price) * shoppingCart.items[i].quantity;
+			subTotal += Number(shoppingCart.items[i].price) * shoppingCart.items[i].quantity;
+			totalItems += shoppingCart.items[i].quantity;
 		});
 	}
-	shoppingCart.total = total;
+	shoppingCart.subTotal = subTotal;
+	shoppingCart.totalItems = totalItems;
 	console.log('Updated cart:', shoppingCart);
 };
 
@@ -62,7 +83,7 @@ if (checkStorage('shoppingCart')){
 			shoppingCart.items[i].size
 		);
 		// display cart items and append numbers to IDs on product DOM nodes
-		shoppingCart.items[i]._displayCart('#cart-contents', (i + 1));
+		shoppingCart.items[i]._displayCart('.cart-contents', (i + 1));
 	});
 }
 
@@ -77,6 +98,34 @@ $.each(allProducts, function(i) {
 		allProducts[i].sku,
 		1);
   allProducts[i]._display('#products');
+});
+
+$('select.cartItem-quantity').change(function(e) {
+	var
+	$this = $(this),
+	sk = $(this).closest('.cartItem').data('sku'),
+	sz = $(this).closest('.cartItem').data('size'),
+	sel = $(this).val();
+
+	$.each(shoppingCart.items, function(i) {
+		if (shoppingCart.items[i].sku === sk && shoppingCart.items[i].size === sz) {
+			if ( Number(sel) > 0 ) {
+				if (shoppingCart.totalItems < max_items) {
+					shoppingCart.items[i].quantity = Number(sel);
+					updateCart();
+					updateStorage();
+					cartInfo();
+				} else {
+					e.preventDefault();
+					alert('Sorry, we currently have a limit of ' + max_items + ' items per order.');
+					$this.val(shoppingCart.items[i].quantity);
+				}
+			} else {
+				shoppingCart.items[i]._removeFromCart();
+				return false;
+			}
+		}
+	});
 });
 
 /* Product Prototype */
@@ -96,18 +145,22 @@ function Product(title, desc, img, price, sku, quantity, size=null) {
 	// methods
 	this._addToCart = function(s, q) {
 		// check to see if product is already in cart
-		if (checkCart(this)) {
-			console.log('Adding ' + q + ' ' + title + '(s) to cart...');
-			$.each(shoppingCart.items, function(i) {
-				// find existing item in cart and increment quantity
-				if (shoppingCart.items[i].sku === sku && shoppingCart.items[i].size === s) {
-					shoppingCart.items[i].quantity += q;
-				}
-			});
+		if (shoppingCart.totalItems < max_items) {
+			if (checkCart(this)) {
+				console.log('Adding ' + q + ' ' + title + '(s) to cart...');
+				$.each(shoppingCart.items, function(i) {
+					// find existing item in cart and increment quantity
+					if (shoppingCart.items[i].sku === sku && shoppingCart.items[i].size === s) {
+						shoppingCart.items[i].quantity += q;
+					}
+				});
+			} else {
+				// set size property and add new product to cart
+				this.size = s;
+				shoppingCart.items.push(this);
+			}
 		} else {
-			// set size property and add new product to cart
-			this.size = s;
-			shoppingCart.items.push(this);
+			alert('Sorry, we currently have a limit of ' + max_items + ' items per order.');
 		}
 		// save state
 		updateCart();
@@ -118,23 +171,16 @@ function Product(title, desc, img, price, sku, quantity, size=null) {
 		$.each(shoppingCart.items, function(i) {
 			// find item in cart and differentiate sizes
 			if (shoppingCart.items[i].sku === sku && shoppingCart.items[i].size === size) {
-				// remove one at a time until there are no more
-				if (shoppingCart.items[i].quantity > 1) {
-					// adjust quantity in object and cart UI
-					shoppingCart.items[i].quantity -= 1;
-					$('.cartItem[data-size="' + size + '"][data-sku="' + sku + '"]').find('.cartItem-quantity').text(shoppingCart.items[i].quantity);
-				} else {
-					console.log('All ' + shoppingCart.items[i].title + ' removed from cart');
-					// remove corresponding DOM node
-					$('.cartItem[data-size="' + size + '"][data-sku="' + sku + '"]').remove();
-					// remove Product from cart items
-					shoppingCart.items.splice(i, 1);
-					return false;
-				}
+				// remove corresponding DOM node
+				$('.cartItem[data-size="' + size + '"][data-sku="' + sku + '"]').remove();
+				// remove Product from cart items
+				shoppingCart.items.splice(i, 1);
+				return false;
 			}
 		});
 		updateCart();
 		updateStorage();
+		cartInfo();
 	};
 	this._display = function(target) {
 		image.attr({
@@ -148,7 +194,7 @@ function Product(title, desc, img, price, sku, quantity, size=null) {
 			'<img style="display: block; width: 100%;" src="' + img + '" alt="' + title + '">' +
 			'<h2>' + title + '</h2>' +
 			'<p>' + desc + '</p>' +
-			'<p>' + price + '</p>'
+			'<p>$' + price + '</p>'
 		);
 		button
 		.attr({
@@ -173,8 +219,10 @@ function Product(title, desc, img, price, sku, quantity, size=null) {
 			'<img class="j-col j-col-2 cartItem-img" src="' + img + '" alt="' + title + '">' +
 			'<div class="j-col j-col-4"><span class="cartItem-title">' + title + '</span></div>' +
 			'<div class="j-col j-col-4"><span class="cartItem-size">' + size + '</span></div>' +
-			'<div class="j-col j-col-2"><span class="cartItem-price">' + price + '</span></div>' +
-			'<div class="j-col j-col-2"><span class="cartItem-quantity">' + quantity + '</div>'
+			'<div class="j-col j-col-2"><span class="cartItem-price">$' + price + '</span></div>' +
+			'<div class="j-col j-col-2"><select class="cartItem-quantity">' +
+			'</select>' +
+			'</div>'
 		);
 		button
 		.attr({
@@ -185,5 +233,10 @@ function Product(title, desc, img, price, sku, quantity, size=null) {
 		.appendTo(product)
 		.click($.proxy(this._removeFromCart, this));
 		product.appendTo(target);
+		for (var i = 0; i < max_items; i++) {
+			$('.cartItem-quantity').append('<option value="' + i +'">' + i + '</option>');
+		};
+		product.find('.cartItem-quantity').val(quantity);
+		cartInfo();
 	};
 }

@@ -1295,31 +1295,19 @@ section.navbar {
     height: 68px; }
   section.navbar .logo {
     position: relative;
-    padding-left: 26px; }
-    @media screen and (min-width: 960px) and (max-width: 1280px), screen and (min-width: 1281px) and (max-width: 1919px), screen and (min-width: 1920px) {
-      section.navbar .logo::after {
-        font-size: 0.618rem;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        left: 100%;
-        width: 200px;
-        color: #fff;
-        margin-left: -1rem;
-        opacity: 0;
-        transition: margin-left 500ms cubic-bezier(0.13, 0.78, 0.3, 0.99), opacity 250ms linear; }
-      section.navbar .logo:hover::after {
-        opacity: 1;
-        margin-left: 1rem; } }
+    padding-left: 26px;
+    width: 330px; }
     @media screen and (min-width: 768px) and (max-width: 959px), screen and (max-width: 767px) {
       section.navbar .logo {
         position: absolute;
         left: 1rem;
         top: 50%;
-        transform: translateY(-50%); } }
+        transform: translateY(-50%);
+        width: 200px; } }
   @media screen and (min-width: 768px) and (max-width: 959px), screen and (max-width: 767px) {
     section.navbar {
-      height: 68px; } }
+      height: 68px;
+      width: 100%; } }
 
 .nav {
   height: 100%;
@@ -1664,6 +1652,9 @@ form#newsletter {
   .footer-social-link:hover svg path,
   .footer-social-link:hover svg polygon {
     fill: #41cdfc; }
+
+.cartItem {
+  margin-bottom: 1rem; }
 
 #product-img {
   width: 100%; }

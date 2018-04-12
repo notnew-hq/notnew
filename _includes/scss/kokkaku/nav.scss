@@ -1,5 +1,4 @@
 section.navbar {
-  // width: 25%;
   height: 110px;
   position: fixed;
   top: 0;
@@ -17,36 +16,18 @@ section.navbar {
   .logo {
     position: relative;
     padding-left: 26px;
-    @media #{$desktop-sm}, #{$desktop}, #{$desktop-xl} {
-      &::after {
-        // content: 'Smart Scaling for Enterprise IT';
-        font-size: $type-smaller;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        left: 100%;
-        width: 200px;
-        color: $white;
-        margin-left: -$spacing-small;
-        opacity: 0;
-        transition: margin-left 500ms $transition-ease-in, opacity 250ms linear;
-      }
-      &:hover {
-        &::after {
-          opacity: 1;
-          margin-left: $spacing-small;
-        }
-      }
-    }
+    width: 330px;
     @media #{$tablet}, #{$mobile} {
       position: absolute;
       left: $spacing-small;
       top: 50%;
       transform: translateY(-50%);
+      width: 200px;
     }
   }
   @media #{$tablet}, #{$mobile} {
     height: 68px;
+    width: 100%;
   }
 }
 .nav {
