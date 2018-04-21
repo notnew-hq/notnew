@@ -4,12 +4,129 @@ js: checkout.js
 ---
 <section class="color-block white">
   <div class="content">
-    <form id="paypal-form" action="" method="post">
-    <input type="hidden" name="cmd" value="_cart" />
-    <input type="hidden" name="upload" value="1" />
-    <input type="hidden" name="business" value="" />
-    <input type="hidden" name="currency_code" value="" />
-    <input type="submit" id="paypal-btn" class="btn" value="Pay with PayPal" />
-</form>
+    <div class="j-col j-col-12">
+      <h2 class="orange">Checkout</h2>
+      <div class="cart-contents"></div>
+      <div class="cart-info">
+        <div class="j-row">
+          <div class="j-row vertical-center-row space-between">
+            <h4>Subtotal</h4>
+            <span class="cart-subtotal"></span>
+          </div>
+          <div class="j-row vertical-center-row space-between">
+            <h4>Shipping</h4>
+            <span class="cart-shipping"></span>
+          </div>
+          <div class="j-row vertical-center-row space-between">
+            <h4>Total</h4>
+            <span class="cart-total"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="color-block dark-black">
+  <div class="content">
+    <form action="" id="shipping">
+        <div class="j-row">
+          <div class="j-col j-col-12">
+            <h3 class="blue">Shipping</h3>
+          </div>
+        </div>
+        <div class="j-row form-field form-field--first-name">
+          <div class="j-col j-col-2">
+            <label for="first-name">First Name</label>
+          </div>
+          <div class="j-col j-col-10">
+            <input type="text" name="first-name" required>
+          </div>
+        </div>
+        <div class="j-row form-field form-field--last-name">
+          <div class="j-col j-col-2">
+            <label for="last-name">Last Name</label>
+          </div>
+          <div class="j-col j-col-10">
+            <input type="text" name="last-name" required>
+          </div>
+        </div>
+        <div class="j-row form-field form-field--address1">
+          <div class="j-col j-col-2">
+            <label for="address-1">Address 1</label>
+          </div>
+          <div class="j-col j-col-10">
+            <input type="text" name="address-1" required>
+          </div>
+        </div>
+        <div class="j-row form-field form-field--address2">
+          <div class="j-col j-col-2">
+            <label for="address-2">Address 2</label>
+          </div>
+          <div class="j-col j-col-10">
+            <input type="text" name="address-2">
+          </div>
+        </div>
+        <div class="j-row form-field form-field--country">
+          <div class="j-col j-col-2">
+            <label for="country">Country</label>
+          </div>
+          <div class="j-col j-col-10">
+            <select name="country" required>
+            </select>
+          </div>
+        </div>
+        <div class="j-row form-field form-field--state" style="display: none;">
+          <div class="j-col j-col-2">
+            <label for="state">State</label>
+          </div>
+          <div class="j-col j-col-10">
+            <select name="state"></select>
+          </div>
+        </div>
+        <div class="j-row form-field form-field--city">
+          <div class="j-col j-col-2">
+            <label for="city">City</label>
+          </div>
+          <div class="j-col j-col-10">
+            <input type="text" name="city" required>
+          </div>
+        </div>
+        <div class="j-row form-field form-field--zip">
+          <div class="j-col j-col-2">
+            <label for="zip">Postal Code</label>
+          </div>
+          <div class="j-col j-col-10">
+            <input type="text" name="zip" required>
+          </div>
+        </div>
+        <div class="j-row form-field form-field--email">
+          <div class="j-col j-col-2">
+            <label for="email">Email</label>
+          </div>
+          <div class="j-col j-col-10">
+            <input type="text" name="email" required>
+          </div>
+        </div>
+        <div class="j-row form-field form-field--save" style="text-align: right;">
+          <div class="j-col j-col-12">
+            <button type="submit" class="button">Save Address</button>
+          </div>
+        </div>
+      </form>
+  </div>
+</section>
+</blockquote>
+<section class="color-block white checkout-payment">
+  <div class="content">
+    <div class="j-col j-col-12">
+      <form id="paypal-form" class="j-col j-col-12" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+        <input type="hidden" name="cmd" value="_cart" />
+        <input type="hidden" name="upload" value="1" />
+        <input type="hidden" name="business" value="" />
+        <input type="hidden" name="currency_code" value="" />
+        <input type="hidden" value="{{site.url}}/" name="return">
+        <input type="submit" id="paypal-btn" class="button" value="Pay with PayPal" />
+      </form>
+    </div>
   </div>
 </section>

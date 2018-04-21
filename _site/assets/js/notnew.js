@@ -39,6 +39,7 @@ checkStorage = function(key) {
 		shoppingCart = JSON.parse(localStorage[key]);
 		// log what's in storage
 		console.log('Existing Cart:', shoppingCart);
+		$('.cart-quantity').text(shoppingCart.totalItems);
 		return shoppingCart;
 	} else {
 		console.log('Nothing for "' + key + '" DAWG' );
@@ -76,6 +77,7 @@ updateCart = function(){
 	shoppingCart.subTotal = subTotal;
 	shoppingCart.totalItems = totalItems;
 	console.log('Updated cart:', shoppingCart);
+	$('.cart-quantity').text(shoppingCart.totalItems);
 };
 
 // return Product method access to objects in storage
@@ -119,15 +121,15 @@ $('select.cartItem-quantity').change(function(e) {
 	$.each(shoppingCart.items, function(i) {
 		if (shoppingCart.items[i].sku === sk && shoppingCart.items[i].size === sz) {
 			if ( Number(sel) > 0 ) {
-				if (shoppingCart.totalItems < max_items) {
+				if ( ( (shoppingCart.totalItems - shoppingCart.items[i].quantity) + Number(sel) ) > max_items ) {
+					e.preventDefault();
+					alert('Sorry, we currently have a limit of ' + max_items + ' items per order.');
+					$this.val(shoppingCart.items[i].quantity);
+				} else {
 					shoppingCart.items[i].quantity = Number(sel);
 					updateCart();
 					updateStorage();
 					cartInfo();
-				} else {
-					e.preventDefault();
-					alert('Sorry, we currently have a limit of ' + max_items + ' items per order.');
-					$this.val(shoppingCart.items[i].quantity);
 				}
 			} else {
 				shoppingCart.items[i]._removeFromCart();
@@ -439,23 +441,23 @@ jQuery(document).ready(function($) { // DOM ready pants
 // Nav
 (function(){ // nav pants
 
-  $(window).scroll(function(){
-
-    var scroll = $(window).scrollTop();
-    var $nav = $('.navbar');
-    var navHeight = $nav.height();
-
-    if (scroll >= navHeight) { // user scrolls past height of nav
-
-      $nav.addClass('is-scrolled'); // add mod class
-
-    } else {
-
-      $nav.removeClass('is-scrolled'); // remove mod class
-
-    }
-
-  });
+  // $(window).scroll(function(){
+  //
+  //   var scroll = $(window).scrollTop();
+  //   var $nav = $('.navbar');
+  //   var navHeight = $nav.height();
+  //
+  //   if (scroll >= navHeight) { // user scrolls past height of nav
+  //
+  //     $nav.addClass('is-scrolled'); // add mod class
+  //
+  //   } else {
+  //
+  //     $nav.removeClass('is-scrolled'); // remove mod class
+  //
+  //   }
+  //
+  // });
 
   $('.js-nav-trigger').click(function(){ // user clicks nav trigger
 

@@ -52,6 +52,9 @@ section.navbar {
       text-decoration: none;
       color: #41cdfc;
       transition: 400ms $transition-ease-in;
+      .cart-quantity {
+        color: $white;
+      }
       &.button {
         line-height: 50px;
         padding: 0 $spacing-normal;

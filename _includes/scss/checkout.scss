@@ -1,0 +1,39 @@
+#paypal-form {
+  text-align: right;
+  input {
+    border: 0;
+    -webkit-appearance: none;
+  }
+}
+#shipping {
+  .form-field {
+    margin-bottom: $spacing-small;
+  }
+  label {
+    color: $white;
+  }
+  input[type="text"] {
+    display: block;
+    width: 100%;
+    background: transparent;
+    border: 0;
+    border-bottom: 2px solid $blue;
+    transition: 300ms ease;
+    color: $white;
+    &:focus{
+      border-color: $white;
+    }
+  }
+}
+.checkout-payment {
+  bottom: -200px;
+  box-shadow: 0 -6px 26px 0 rgba(black, .06);
+  height: 200px;
+  left: 0;
+  position: fixed;
+  width: 100%;
+  transition: 600ms ease-in-out;
+  &.is-visible {
+    bottom: 0;
+  }
+}
