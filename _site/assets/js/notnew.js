@@ -13,54 +13,30 @@ var shoppingCart = {
 	subTotal: 0,
 	shipping: 0,
 },
-max_items = 100,
-// check if item is already in cart
-checkCart = function(item) {
-	var exists = false;
-	console.log('Checking for item...');
-	$.each(shoppingCart.items, function(i) {
-		// item must match SKU and size to qualify as duplicate
-		if (shoppingCart.items[i].sku === item.sku && shoppingCart.items[i].size === item.size) {
-			exists = true;
-			console.log('Item already in cart: ', shoppingCart.items[i].title);
-			return exists;
-		}
-	});
-	if (exists) {
-		return true
-	} else {
-		return false;
-	}
-},
-checkStorage = function(key) {
-	// localStorage only supports strings so check for valid value
-	if (typeof localStorage[key] === 'string') {
-		// restore state of shopping cart
-		shoppingCart = JSON.parse(localStorage[key]);
-		// log what's in storage
-		console.log('Existing Cart:', shoppingCart);
-		$('.cart-quantity').text(shoppingCart.totalItems);
-		return shoppingCart;
-	} else {
-		console.log('Nothing for "' + key + '" DAWG' );
-		return false;
-	}
-},
-updateStorage = function() {
-	localStorage.shoppingCart = JSON.stringify(shoppingCart);
-},
+max_items = 100, // declare max order quantity
 cartInfo = function() {
 	// Display cart total and calculate shipping
 	$('.cart-subtotal').text('$' + shoppingCart.subTotal);
-	if (shoppingCart.totalItems > 1 && shoppingCart.totalItems < 5) {
-		shoppingCart.shipping = 15;
-	} else if (shoppingCart.totalItems > 5) {
-		shoppingCart.shipping = 20;
-	} else {
-		shoppingCart.shipping = 8;
-	}
 	$('.cart-shipping').text('$' + shoppingCart.shipping);
 	$('.cart-total').text('$' + (shoppingCart.subTotal + shoppingCart.shipping));
+},
+checkCart = function(sku, size) {
+	var
+	cart = shoppingCart.items,
+	// empty var to be returned with object data
+	item;
+	console.log('Checking for item...');
+	// loop through cart to find match
+	$.each(cart, function(i) {
+		// items must have same size AND sku to qualify as match
+		if (cart[i].sku === sku && cart[i].size === size) {
+			console.log('Found item in cart: ', cart[i]);
+			// set empty variable to object
+			item = cart[i];
+		}
+	});
+	// return object from cart
+	return item;
 },
 updateCart = function(){
 	var
@@ -73,11 +49,39 @@ updateCart = function(){
 			subTotal += Number(shoppingCart.items[i].price) * shoppingCart.items[i].quantity;
 			totalItems += shoppingCart.items[i].quantity;
 		});
+		// update cart properties
+		shoppingCart.subTotal = subTotal;
+		shoppingCart.totalItems = totalItems;
+		// update cart item counters across site
+		$('.cart-quantity').text(shoppingCart.totalItems);
+		// set shipping rates
+		if (shoppingCart.totalItems < 2) {
+			shoppingCart.shipping = 8;
+		} else if (shoppingCart.totalItems > 2 && shoppingCart.totalItems <= 5) {
+			shoppingCart.shipping = 15;
+		} else if (shoppingCart.totalItems > 5) {
+			shoppingCart.shipping = 20;
+		}
 	}
-	shoppingCart.subTotal = subTotal;
-	shoppingCart.totalItems = totalItems;
 	console.log('Updated cart:', shoppingCart);
-	$('.cart-quantity').text(shoppingCart.totalItems);
+},
+checkStorage = function(key) {
+	// localStorage only supports strings so check for valid value
+	if (typeof localStorage[key] === 'string') {
+		// restore state of shopping cart
+		shoppingCart = JSON.parse(localStorage[key]);
+		// log what's in storage
+		console.log('Existing Cart:', shoppingCart);
+		// update cart item counters across site
+		$('.cart-quantity').text(shoppingCart.totalItems);
+		return shoppingCart;
+	} else {
+		console.log('No existing ' + key);
+		return false;
+	}
+},
+updateStorage = function() {
+	localStorage.shoppingCart = JSON.stringify(shoppingCart);
 };
 
 // return Product method access to objects in storage
@@ -100,7 +104,8 @@ if (checkStorage('shoppingCart')){
 
 // new Product object for each product in products.js
 $.each(allProducts, function(i) {
-	// read properties from each index in shoppingCart and apply as parameters to Product constructor
+	// read properties from each index in shoppingCart
+	// apply as parameters to Product constructor
 	allProducts[i] = new Product(
 		allProducts[i].title,
 		allProducts[i].desc,
@@ -110,33 +115,41 @@ $.each(allProducts, function(i) {
 		1);
   allProducts[i]._display('#products');
 });
-
+// user updates item quantity from dropdown
 $('select.cartItem-quantity').change(function(e) {
 	var
 	$this = $(this),
+	// item sku
 	sk = $(this).closest('.cartItem').data('sku'),
+	// item size
 	sz = $(this).closest('.cartItem').data('size'),
+	// item with size and sku
+	item = checkCart(sk, sz);
+	// user selection
 	sel = $(this).val();
-
-	$.each(shoppingCart.items, function(i) {
-		if (shoppingCart.items[i].sku === sk && shoppingCart.items[i].size === sz) {
-			if ( Number(sel) > 0 ) {
-				if ( ( (shoppingCart.totalItems - shoppingCart.items[i].quantity) + Number(sel) ) > max_items ) {
-					e.preventDefault();
-					alert('Sorry, we currently have a limit of ' + max_items + ' items per order.');
-					$this.val(shoppingCart.items[i].quantity);
-				} else {
-					shoppingCart.items[i].quantity = Number(sel);
-					updateCart();
-					updateStorage();
-					cartInfo();
-				}
+	// check for item
+	if (item) {
+		if (Number(sel) > 0) {
+			// make sure new quantity doesn't overflow cart
+			if ( ((shoppingCart.totalItems - item.quantity) + Number(sel)) > max_items ) {
+				// prevent default just in case
+				e.preventDefault();
+				alert('Sorry, we currently have a limit of ' + max_items + ' items per order.');
+				// set value back to what it was before user tried to change
+				$this.val(item.quantity);
 			} else {
-				shoppingCart.items[i]._removeFromCart();
-				return false;
+				// set quantity to user selection
+				item.quantity = Number(sel);
+				// save state and update front end
+				updateCart();
+				updateStorage();
+				cartInfo();
 			}
+		} else {
+			// if user selects 0, just delete item from cart
+			item._removeFromCart();
 		}
-	});
+	}
 });
 
 /* Product Prototype */
@@ -155,22 +168,21 @@ function Product(title, desc, img, price, sku, quantity, size=null) {
 	button = $('<a></a>');
 	// methods
 	this._addToCart = function(s, q) {
-		// check to see if product is already in cart
+		// check cart for item with checkCart()
+		var item = checkCart(this.sku, this.size);
+		// if we have room in the cart
 		if (shoppingCart.totalItems < max_items) {
-			if (checkCart(this)) {
+			// and if item exists
+			if (item) {
 				console.log('Adding ' + q + ' ' + title + '(s) to cart...');
-				$.each(shoppingCart.items, function(i) {
-					// find existing item in cart and increment quantity
-					if (shoppingCart.items[i].sku === sku && shoppingCart.items[i].size === s) {
-						shoppingCart.items[i].quantity += q;
-					}
-				});
-			} else {
+				// increase item quantity by quantity selected
+				item.quantity += q;
+			} else { // item does not exist in cart
 				// set size property and add new product to cart
 				this.size = s;
 				shoppingCart.items.push(this);
 			}
-		} else {
+		} else { // cart is full
 			alert('Sorry, we currently have a limit of ' + max_items + ' items per order.');
 		}
 		// save state
@@ -178,35 +190,41 @@ function Product(title, desc, img, price, sku, quantity, size=null) {
 		updateStorage();
 	};
 	this._removeFromCart = function() {
+		var
+		item = checkCart(this.sku, this.size),
+		itemNode = $('.cartItem[data-size="' + size + '"][data-sku="' + sku + '"]');
 		console.log('Removing from cart...', this);
-		$.each(shoppingCart.items, function(i) {
-			// find item in cart and differentiate sizes
-			if (shoppingCart.items[i].sku === sku && shoppingCart.items[i].size === size) {
-				// remove corresponding DOM node
-				$('.cartItem[data-size="' + size + '"][data-sku="' + sku + '"]').remove();
-				// remove Product from cart items
-				shoppingCart.items.splice(i, 1);
-				return false;
-			}
-		});
+		if (item) {
+			// remove Product from cart items
+			// find the index of the item node in cart-contents
+			// remove the item at matchin index of shoppingCart.items
+			shoppingCart.items.splice(itemNode.index(), 1);
+			// remove DOM node
+			itemNode.remove();
+		}
+		// save state and reflect changes
 		updateCart();
 		updateStorage();
 		cartInfo();
 	};
 	this._display = function(target) {
+		// set image
 		image.attr({
 			'src': img,
 		});
+		// configure product
 		product.attr({
 			'class': 'j-col j-col-4 product',
 			'data-sku': sku
 		})
+		// populate image, title, description, and price
 		.html(
 			'<img style="display: block; width: 100%;" src="' + img + '" alt="' + title + '">' +
 			'<h2>' + title + '</h2>' +
 			'<p>' + desc + '</p>' +
 			'<p>$' + price + '</p>'
 		);
+		// configure button
 		button
 		.attr({
 			'href': '/product/?productId=' + sku,
@@ -214,18 +232,25 @@ function Product(title, desc, img, price, sku, quantity, size=null) {
 		})
 		.text('View Item')
 		.appendTo(product);
+		// add product to page at specified target
 		product.appendTo(target);
 	};
+	// display items in cart
 	this._displayCart = function(target, id) {
+		// set image
 		image.attr({
 			'src': img,
 		});
+		// configure product parent node
 		product.attr({
 			'class': 'j-row vertical-center-row space-between product cartItem',
+			// give ID based on index in cart
 			'id': 'cart-item-' + id,
+			// store differentiating data in html attributes
 			'data-sku': sku,
 			'data-size': size,
 		})
+		// render product details
 		.html(
 			'<img class="j-col j-col-2 cartItem-img" src="' + img + '" alt="' + title + '">' +
 			'<div class="j-col j-col-4"><span class="cartItem-title">' + title + '</span></div>' +
@@ -235,6 +260,7 @@ function Product(title, desc, img, price, sku, quantity, size=null) {
 			'</select>' +
 			'</div>'
 		);
+		// configure button
 		button
 		.attr({
 			'href': 'javascript:void(0)',
@@ -243,11 +269,15 @@ function Product(title, desc, img, price, sku, quantity, size=null) {
 		.text('Remove')
 		.appendTo(product)
 		.click($.proxy(this._removeFromCart, this));
+		// add cart item to front end
 		product.appendTo(target);
+		// add dropdown options to quantity select
 		for (var i = 0; i < max_items; i++) {
 			$('.cartItem-quantity').append('<option value="' + i +'">' + i + '</option>');
 		};
+		// set initial values of all dropdowns to match item quantity in cart
 		product.find('.cartItem-quantity').val(quantity);
+		// display total, shipping, etc.
 		cartInfo();
 	};
 }
