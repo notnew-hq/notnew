@@ -52,8 +52,6 @@ updateCart = function(){
 		// update cart properties
 		shoppingCart.subTotal = subTotal;
 		shoppingCart.totalItems = totalItems;
-		// update cart item counters across site
-		$('.cart-quantity').text(shoppingCart.totalItems);
 		// set shipping rates
 		if (shoppingCart.totalItems < 2) {
 			shoppingCart.shipping = 8;
@@ -62,7 +60,13 @@ updateCart = function(){
 		} else if (shoppingCart.totalItems > 5) {
 			shoppingCart.shipping = 20;
 		}
+	} else {
+		shoppingCart.subTotal = 0;
+		shoppingCart.totalItems = 0;
+		shoppingCart.shipping = 0;
 	}
+	// update cart item counters across site
+	$('.cart-quantity').text(shoppingCart.totalItems);
 	console.log('Updated cart:', shoppingCart);
 },
 checkStorage = function(key) {
@@ -197,7 +201,7 @@ function Product(title, desc, img, price, sku, quantity, size=null) {
 		if (item) {
 			// remove Product from cart items
 			// find the index of the item node in cart-contents
-			// remove the item at matchin index of shoppingCart.items
+			// remove the item at matching index of shoppingCart.items
 			shoppingCart.items.splice(itemNode.index(), 1);
 			// remove DOM node
 			itemNode.remove();
