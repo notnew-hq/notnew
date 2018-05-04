@@ -17,7 +17,7 @@ var allProducts = [
 		title: 'T-shirt',
 		desc: 'Black shirt with front and back green print.',
 		img: '/assets/img/2018-03-08-not-new-img_3.jpg',
-		price: '0',
+		price: '25',
     sku: 'NNH003'
 	},
 ];

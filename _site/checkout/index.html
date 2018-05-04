@@ -33,7 +33,7 @@
           <a href="/" title="Shop Not New">Shop</a>
         </li>
         <li class="nav-item">
-          <a href="/checkout/" class="current" title="View Cart">Checkout (<span class="cart-quantity">0</span>)</a>
+          <a href="/cart/" title="View Cart">Cart (<span class="cart-quantity">0</span>)</a>
         </li>
       </ul>
     </nav>
@@ -45,22 +45,39 @@
     </section> -->
 <section class="color-block white">
   <div class="content">
+    <div class="j-row vertical-center-row">
+      <div class="j-col j-col-8">
+        <h2 class="orange">Checkout</h2>
+      </div>
+      <div class="j-col j-col-3 push-1">
+        <a href="/cart/" class="button full-width">Edit Cart</a>
+      </div>
+    </div>
     <div class="j-col j-col-12">
-      <h2 class="orange">Checkout</h2>
-      <div class="cart-contents"></div>
+      <div class="cart-contents readonly" data-editable="false"></div>
       <div class="cart-info">
         <div class="j-row">
-          <div class="j-row vertical-center-row space-between">
-            <h4>Subtotal</h4>
-            <span class="cart-subtotal"></span>
+          <div class="j-col j-col-12">
+            <div class="j-row vertical-center-row space-between">
+              <h4>Subtotal</h4>
+              <span class="cart-subtotal"></span>
+            </div>
           </div>
-          <div class="j-row vertical-center-row space-between">
-            <h4>Shipping</h4>
-            <span class="cart-shipping"></span>
+        </div>
+        <div class="j-row">
+          <div class="j-col j-col-12">
+            <div class="j-row vertical-center-row space-between">
+              <h4>Shipping</h4>
+              <span class="cart-shipping"></span>
+            </div>
           </div>
-          <div class="j-row vertical-center-row space-between">
-            <h4>Total</h4>
-            <span class="cart-total"></span>
+        </div>
+        <div class="j-row">
+          <div class="j-col j-col-12">
+            <div class="j-row vertical-center-row space-between">
+              <h4>Total</h4>
+              <span class="cart-total"></span>
+            </div>
           </div>
         </div>
       </div>
@@ -173,32 +190,6 @@
 </section>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script>
-  var allProducts = [
-  {
-		title: 'Sweatshirt',
-		desc: 'Black sweatshirt with print on chest and right arm.',
-		img: '/assets/img/2018-03-08-not-new-img_157.jpg',
-		price: '40',
-    sku: 'NNH001'
-	},
-	{
-		title: 'Sweatshirt',
-		desc: 'Blue sweatshirt with yellow front and back print.',
-		img: '/assets/img/2018-03-08-not-new-img_6.jpg',
-		price: '40',
-    sku: 'NNH002'
-	},
-	{
-		title: 'T-shirt',
-		desc: 'Black shirt with front and back green print.',
-		img: '/assets/img/2018-03-08-not-new-img_3.jpg',
-		price: '0',
-    sku: 'NNH003'
-	},
-];
-
-</script>
 <script src="/assets/js/notnew.js"></script>
 
 <script src="/assets/js/checkout.js"></script>

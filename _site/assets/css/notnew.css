@@ -707,7 +707,8 @@ ol {
     .button.button--flat:hover {
       background: rgba(4, 29, 57, 0.1); }
   .button.full-width {
-    display: block; }
+    display: block;
+    width: 100%; }
   @media screen and (min-width: 960px) and (max-width: 1280px), screen and (min-width: 1281px) and (max-width: 1919px), screen and (min-width: 1920px) {
     .button.button--small-text {
       font-size: 0.618rem; } }
@@ -736,6 +737,9 @@ div#site {
 
 .centered {
   text-align: center; }
+
+.text-align-right {
+  text-align: right; }
 
 .hero {
   width: 100%;
@@ -1660,6 +1664,12 @@ form#newsletter {
 
 #product-img {
   width: 100%; }
+
+.cart-contents.readonly .j-col:last-child {
+  text-align: right; }
+  @media screen and (max-width: 767px) {
+    .cart-contents.readonly .j-col:last-child {
+      text-align: left; } }
 
 #paypal-form {
   text-align: right; }

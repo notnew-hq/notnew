@@ -33,7 +33,7 @@
           <a href="/" title="Shop Not New">Shop</a>
         </li>
         <li class="nav-item">
-          <a href="/checkout/" title="View Cart">Checkout (<span class="cart-quantity">0</span>)</a>
+          <a href="/cart/" class="current" title="View Cart">Cart (<span class="cart-quantity">0</span>)</a>
         </li>
       </ul>
     </nav>
@@ -43,59 +43,41 @@
     <!-- <section class="hero" id="" style="background-color: #333;">
       <div class="content hero-content"></div>
     </section> -->
-<section class="color-block white"><div class="content" style="padding-top: 62px;">
+<section class="color-block white">
+  <div class="content" style="padding-top: 62px;">
   <h1 style="color: #ff4d00; padding-left: 26px;">CART</h1>
   <div class="content">
-    <div class="cart-contents"></div>
-    <div class="cart-info">
-      <div class="j-row">
-        <div class="j-col j-col-6 push-6">
+    <div class="cart-contents" data-editable="true"></div>
+  </div>
+</div>
+</section>
+<section class="color-block dark-black">
+  <div class="content">
+    <div class="j-row">
+      <div class="j-col j-col-6">
+        <div class="cart-info">
           <div class="j-row vertical-center-row space-between">
-            <h4>Subtotal</h4>
-            <span class="cart-subtotal"></span>
+            <h4 class="blue">Subtotal</h4>
+            <span class="cart-subtotal white"></span>
           </div>
           <div class="j-row vertical-center-row space-between">
-            <h4>Shipping</h4>
-            <span class="cart-shipping"></span>
+            <h4 class="blue">Shipping</h4>
+            <span class="cart-shipping white"></span>
           </div>
           <div class="j-row vertical-center-row space-between">
-            <h4>Total</h4>
-            <span class="cart-total"></span>
+            <h4 class="blue">Total</h4>
+            <span class="cart-total white"></span>
           </div>
         </div>
       </div>
+      <div class="j-col j-col-3 push-3">
+      <a href="/checkout/" class="button full-width">Proceed to Checkout</a>
     </div>
-  </div>
+    </div>
 </div>
 </section>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script>
-  var allProducts = [
-  {
-		title: 'Sweatshirt',
-		desc: 'Black sweatshirt with print on chest and right arm.',
-		img: '/assets/img/2018-03-08-not-new-img_157.jpg',
-		price: '40',
-    sku: 'NNH001'
-	},
-	{
-		title: 'Sweatshirt',
-		desc: 'Blue sweatshirt with yellow front and back print.',
-		img: '/assets/img/2018-03-08-not-new-img_6.jpg',
-		price: '40',
-    sku: 'NNH002'
-	},
-	{
-		title: 'T-shirt',
-		desc: 'Black shirt with front and back green print.',
-		img: '/assets/img/2018-03-08-not-new-img_3.jpg',
-		price: '0',
-    sku: 'NNH003'
-	},
-];
-
-</script>
 <script src="/assets/js/notnew.js"></script>
 
   </body>

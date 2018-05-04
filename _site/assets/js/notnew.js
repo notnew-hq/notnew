@@ -7,6 +7,31 @@ function isTouch() { // check to see if touch screen
     return false;
   }
 }
+var allProducts = [
+  {
+		title: 'Sweatshirt',
+		desc: 'Black sweatshirt with print on chest and right arm.',
+		img: '/assets/img/2018-03-08-not-new-img_157.jpg',
+		price: '40',
+    sku: 'NNH001'
+	},
+	{
+		title: 'Sweatshirt',
+		desc: 'Blue sweatshirt with yellow front and back print.',
+		img: '/assets/img/2018-03-08-not-new-img_6.jpg',
+		price: '40',
+    sku: 'NNH002'
+	},
+	{
+		title: 'T-shirt',
+		desc: 'Black shirt with front and back green print.',
+		img: '/assets/img/2018-03-08-not-new-img_3.jpg',
+		price: '25',
+    sku: 'NNH003'
+	},
+];
+
+
 var shoppingCart = {
 	items:[],
 	totalItems: 0,
@@ -51,16 +76,15 @@ updateCart = function(){
 		});
 		// update cart properties
 		shoppingCart.subTotal = subTotal;
-			shoppingCart.shipping = 1;
 		shoppingCart.totalItems = totalItems;
 		// set shipping rates
-		// if (shoppingCart.totalItems < 2) {
-		// 	shoppingCart.shipping = 8;
-		// } else if (shoppingCart.totalItems > 2 && shoppingCart.totalItems <= 5) {
-		// 	shoppingCart.shipping = 15;
-		// } else if (shoppingCart.totalItems > 5) {
-		// 	shoppingCart.shipping = 20;
-		// }
+		if (shoppingCart.totalItems < 2) {
+			shoppingCart.shipping = 8;
+		} else if (shoppingCart.totalItems > 2 && shoppingCart.totalItems <= 5) {
+			shoppingCart.shipping = 15;
+		} else if (shoppingCart.totalItems > 5) {
+			shoppingCart.shipping = 20;
+		}
 	} else {
 		shoppingCart.subTotal = 0;
 		shoppingCart.totalItems = 0;
@@ -91,20 +115,24 @@ updateStorage = function() {
 
 // return Product method access to objects in storage
 if (checkStorage('shoppingCart')){
-	$.each(shoppingCart.items, function(i) {
-		// construct new Product in place of each object in shoppingCart
-		shoppingCart.items[i] = new Product(
-			shoppingCart.items[i].title,
-			shoppingCart.items[i].desc,
-			shoppingCart.items[i].img,
-			shoppingCart.items[i].price,
-			shoppingCart.items[i].sku,
-			shoppingCart.items[i].quantity,
-			shoppingCart.items[i].size
-		);
-		// display cart items and append numbers to IDs on product DOM nodes
-		shoppingCart.items[i]._displayCart('.cart-contents', (i + 1));
-	});
+	var cartContainer = $('.cart-contents');
+	if (cartContainer) {
+		var editable = cartContainer.data('editable');
+		$.each(shoppingCart.items, function(i) {
+			// construct new Product in place of each object in shoppingCart
+			shoppingCart.items[i] = new Product(
+				shoppingCart.items[i].title,
+				shoppingCart.items[i].desc,
+				shoppingCart.items[i].img,
+				shoppingCart.items[i].price,
+				shoppingCart.items[i].sku,
+				shoppingCart.items[i].quantity,
+				shoppingCart.items[i].size
+			);
+			// display cart items and append numbers to IDs on product DOM nodes
+			shoppingCart.items[i]._displayCart('.cart-contents', (i + 1), editable);
+		});
+	}
 }
 
 // new Product object for each product in products.js
@@ -187,6 +215,7 @@ function Product(title, desc, img, price, sku, quantity, size=null) {
 				this.size = s;
 				shoppingCart.items.push(this);
 			}
+			alert('Added to cart: ' + title + ' ' + '(' + quantity + ')');
 		} else { // cart is full
 			alert('Sorry, we currently have a limit of ' + max_items + ' items per order.');
 		}
@@ -195,22 +224,24 @@ function Product(title, desc, img, price, sku, quantity, size=null) {
 		updateStorage();
 	};
 	this._removeFromCart = function() {
-		var
-		item = checkCart(this.sku, this.size),
-		itemNode = $('.cartItem[data-size="' + size + '"][data-sku="' + sku + '"]');
-		console.log('Removing from cart...', this);
-		if (item) {
-			// remove Product from cart items
-			// find the index of the item node in cart-contents
-			// remove the item at matching index of shoppingCart.items
-			shoppingCart.items.splice(itemNode.index(), 1);
-			// remove DOM node
-			itemNode.remove();
+		if (confirm('Are you sure you want to remove ' + title + ' from cart?')) {
+			var
+			item = checkCart(this.sku, this.size),
+			itemNode = $('.cartItem[data-size="' + size + '"][data-sku="' + sku + '"]');
+			console.log('Removing from cart...', this);
+			if (item) {
+				// remove Product from cart items
+				// find the index of the item node in cart-contents
+				// remove the item at matching index of shoppingCart.items
+				shoppingCart.items.splice(itemNode.index(), 1);
+				// remove DOM node
+				itemNode.remove();
+			}
+			// save state and reflect changes
+			updateCart();
+			updateStorage();
+			cartInfo();
 		}
-		// save state and reflect changes
-		updateCart();
-		updateStorage();
-		cartInfo();
 	};
 	this._display = function(target) {
 		// set image
@@ -224,8 +255,9 @@ function Product(title, desc, img, price, sku, quantity, size=null) {
 		})
 		// populate image, title, description, and price
 		.html(
+			'<a href="/product/?productId=' + sku + '">' +
 			'<img style="display: block; width: 100%;" src="' + img + '" alt="' + title + '">' +
-			'<h2>' + title + '</h2>' +
+			'<h2>' + title + '</h2></a>' +
 			'<p>' + desc + '</p>' +
 			'<p>$' + price + '</p>'
 		);
@@ -241,7 +273,7 @@ function Product(title, desc, img, price, sku, quantity, size=null) {
 		product.appendTo(target);
 	};
 	// display items in cart
-	this._displayCart = function(target, id) {
+	this._displayCart = function(target, id, editable) {
 		// set image
 		image.attr({
 			'src': img,
@@ -254,26 +286,37 @@ function Product(title, desc, img, price, sku, quantity, size=null) {
 			// store differentiating data in html attributes
 			'data-sku': sku,
 			'data-size': size,
-		})
+		});
 		// render product details
-		.html(
-			'<img class="j-col j-col-2 cartItem-img" src="' + img + '" alt="' + title + '">' +
-			'<div class="j-col j-col-4"><span class="cartItem-title">' + title + '</span></div>' +
-			'<div class="j-col j-col-4"><span class="cartItem-size">' + size + '</span></div>' +
-			'<div class="j-col j-col-2"><span class="cartItem-price">$' + price + '</span></div>' +
-			'<div class="j-col j-col-2"><select class="cartItem-quantity">' +
-			'</select>' +
-			'</div>'
-		);
-		// configure button
-		button
-		.attr({
-			'href': 'javascript:void(0)',
-			'class': 'button',
-		})
-		.text('Remove')
-		.appendTo(product)
-		.click($.proxy(this._removeFromCart, this));
+		if(editable) {
+			product.html(
+				'<img class="j-col j-col-2 cartItem-img" src="' + img + '" alt="' + title + '">' +
+				'<div class="j-col j-col-4"><span class="cartItem-title">' + title + '</span></div>' +
+				'<div class="j-col j-col-2"><span class="cartItem-size">' + size + '</span></div>' +
+				'<div class="j-col j-col-2"><span class="cartItem-price">$' + price + '</span></div>' +
+				'<div class="j-col j-col-2"><select class="cartItem-quantity">' +
+				'</select>' +
+				'</div>'
+			);
+			// configure button
+			button
+			.attr({
+				'href': 'javascript:void(0)',
+				'class': 'button',
+			})
+			.text('Remove')
+			.appendTo(product)
+			.click($.proxy(this._removeFromCart, this));
+		} else {
+			product.html(
+				'<img class="j-col j-col-2 cartItem-img" src="' + img + '" alt="' + title + '">' +
+				'<div class="j-col j-col-4"><span class="cartItem-title">' + title + '</span></div>' +
+				'<div class="j-col j-col-2"><span class="cartItem-size">' + size + '</span></div>' +
+				'<div class="j-col j-col-2"><span class="cartItem-quantity--readonly">' + quantity + '</span></div>' +
+				'<div class="j-col j-col-2"><span class="cartItem-price">$' + price + '</span></div>' +
+				'</div>'
+			);
+		}
 		// add cart item to front end
 		product.appendTo(target);
 		// add dropdown options to quantity select

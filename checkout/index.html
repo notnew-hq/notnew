@@ -4,22 +4,39 @@ js: checkout.js
 ---
 <section class="color-block white">
   <div class="content">
+    <div class="j-row vertical-center-row">
+      <div class="j-col j-col-8">
+        <h2 class="orange">Checkout</h2>
+      </div>
+      <div class="j-col j-col-3 push-1">
+        <a href="{{"/cart/" | relative_url}}" class="button full-width">Edit Cart</a>
+      </div>
+    </div>
     <div class="j-col j-col-12">
-      <h2 class="orange">Checkout</h2>
-      <div class="cart-contents"></div>
+      <div class="cart-contents readonly" data-editable="false"></div>
       <div class="cart-info">
         <div class="j-row">
-          <div class="j-row vertical-center-row space-between">
-            <h4>Subtotal</h4>
-            <span class="cart-subtotal"></span>
+          <div class="j-col j-col-12">
+            <div class="j-row vertical-center-row space-between">
+              <h4>Subtotal</h4>
+              <span class="cart-subtotal"></span>
+            </div>
           </div>
-          <div class="j-row vertical-center-row space-between">
-            <h4>Shipping</h4>
-            <span class="cart-shipping"></span>
+        </div>
+        <div class="j-row">
+          <div class="j-col j-col-12">
+            <div class="j-row vertical-center-row space-between">
+              <h4>Shipping</h4>
+              <span class="cart-shipping"></span>
+            </div>
           </div>
-          <div class="j-row vertical-center-row space-between">
-            <h4>Total</h4>
-            <span class="cart-total"></span>
+        </div>
+        <div class="j-row">
+          <div class="j-col j-col-12">
+            <div class="j-row vertical-center-row space-between">
+              <h4>Total</h4>
+              <span class="cart-total"></span>
+            </div>
           </div>
         </div>
       </div>

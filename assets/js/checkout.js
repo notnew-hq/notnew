@@ -1,5 +1,6 @@
 ---
 ---
+{% include js/products.js %}
 var
 {% include js/countries.js %},
 {% include js/states.js %},

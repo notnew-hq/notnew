@@ -1,3 +1,13 @@
+.cart-contents {
+  &.readonly {
+    .j-col:last-child {
+      text-align: right;
+      @media #{$mobile} {
+        text-align: left;
+      }
+    }
+  }
+}
 #paypal-form {
   text-align: right;
   input {
