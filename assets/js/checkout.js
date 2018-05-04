@@ -31,11 +31,12 @@ if (shoppingCart.items.length > 0) {
     title = cartItem.title,
     price = cartItem.price,
     qty = cartItem.quantity,
+    size = cartItem.size,
     sku = cartItem.sku;
     // create div and add data for each item in cart to PayPal form
     $( '<div/>' ).html( '<input type="hidden" name="quantity_' + (i+1) + "' value=" + qty + '"/>' ).insertBefore('#paypal-btn');
 
-  	$('<div/>').html('<input type="hidden" name="item_name_' + (i+1) + '" value="' + title + '"/>').insertBefore('#paypal-btn');
+  	$('<div/>').html('<input type="hidden" name="item_name_' + (i+1) + '" value="' + title + ' ' + '(' + size + ')' + '"/>').insertBefore('#paypal-btn');
 
   	$('<div/>').html('<input type="hidden" name="item_number_' + (i+1) + '" value="' + sku + '"/>' ).insertBefore('#paypal-btn');
 

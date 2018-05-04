@@ -51,15 +51,16 @@ updateCart = function(){
 		});
 		// update cart properties
 		shoppingCart.subTotal = subTotal;
+			shoppingCart.shipping = 1;
 		shoppingCart.totalItems = totalItems;
 		// set shipping rates
-		if (shoppingCart.totalItems < 2) {
-			shoppingCart.shipping = 8;
-		} else if (shoppingCart.totalItems > 2 && shoppingCart.totalItems <= 5) {
-			shoppingCart.shipping = 15;
-		} else if (shoppingCart.totalItems > 5) {
-			shoppingCart.shipping = 20;
-		}
+		// if (shoppingCart.totalItems < 2) {
+		// 	shoppingCart.shipping = 8;
+		// } else if (shoppingCart.totalItems > 2 && shoppingCart.totalItems <= 5) {
+		// 	shoppingCart.shipping = 15;
+		// } else if (shoppingCart.totalItems > 5) {
+		// 	shoppingCart.shipping = 20;
+		// }
 	} else {
 		shoppingCart.subTotal = 0;
 		shoppingCart.totalItems = 0;
