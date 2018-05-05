@@ -2,7 +2,7 @@ var allProducts = [
   {
 		title: 'Sweatshirt',
 		desc: 'Black sweatshirt with print on chest and right arm.',
-		img: '/assets/img/black-sweatchirt.jpg',
+		img: '/assets/img/black-sweatshirt.jpg',
 		price: '40',
     sku: 'NNH001'
 	},
