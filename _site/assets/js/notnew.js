@@ -8,13 +8,13 @@ function isTouch() { // check to see if touch screen
   }
 }
 var allProducts = [
-  {
-		title: 'Sweatshirt',
-		desc: 'Black sweatshirt with print on chest and right arm.',
-		img: '/assets/img/black-sweatshirt.jpg',
-		price: '40',
-    sku: 'NNH001'
-	},
+  // {
+	// 	title: 'Sweatshirt',
+	// 	desc: 'Black sweatshirt with print on chest and right arm.',
+	// 	img: '/assets/img/black-sweatshirt.jpg',
+	// 	price: '40',
+  //   sku: 'NNH001'
+	// },
 	{
 		title: 'Sweatshirt',
 		desc: 'Blue sweatshirt with yellow front and back print.',
@@ -22,13 +22,13 @@ var allProducts = [
 		price: '40',
     sku: 'NNH002'
 	},
-	{
-		title: 'T-shirt',
-		desc: 'Black shirt with front and back green print.',
-		img: '/assets/img/black-shirt.jpg',
-		price: '25',
-    sku: 'NNH003'
-	},
+	// {
+	// 	title: 'T-shirt',
+	// 	desc: 'Black shirt with front and back green print.',
+	// 	img: '/assets/img/black-shirt.jpg',
+	// 	price: '25',
+  //   sku: 'NNH003'
+	// },
 ];
 
 
