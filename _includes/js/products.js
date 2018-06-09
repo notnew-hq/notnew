@@ -8,8 +8,8 @@ var allProducts = [
 	// },
 	{
 		title: 'Sweatshirt',
-		desc: 'Blue sweatshirt with yellow front and back print.',
-		img: '/assets/img/blue-sweatshirt-yellow-print.jpg',
+		desc: 'Yellow sweatshirt with white print.',
+		img: '/assets/img/not-new-sweatshirt-yellow-1.JPG',
 		price: '40',
     sku: 'NNH002'
 	},
