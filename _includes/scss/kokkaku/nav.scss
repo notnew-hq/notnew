@@ -78,7 +78,7 @@ section.navbar {
         }
         &.current,
         &:hover {
-          color: #ff4d00;
+          color: $yellow;
           &.button {
             color: $white;
           }
@@ -112,7 +112,7 @@ section.navbar {
         line-height: $spacing-small;
         padding: $spacing-small;
         &.current {
-          color: $blue;
+          color: $yellow;
         }
         &.button {
           display: inline-block;
@@ -188,7 +188,7 @@ section.navbar.is-scrolled {
   right: $spacing-small;
   @include z-index-7;
   span {
-    background-color: #ff4d00;
+    background-color: #FFC219;
     display: block;
     position: absolute;
     width: 24px;

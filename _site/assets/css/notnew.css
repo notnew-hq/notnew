@@ -645,7 +645,7 @@ ol {
   text-transform: uppercase; }
   @media screen and (min-width: 960px) and (max-width: 1280px), screen and (min-width: 1281px) and (max-width: 1919px), screen and (min-width: 1920px) {
     .button:hover {
-      background: #ff4d00; } }
+      background: #FFC219; } }
   .button.white {
     background: #fff;
     color: #073971; }
@@ -662,18 +662,18 @@ ol {
           -webkit-box-shadow: inset 0 0 0.6em 0 rgba(255, 255, 255, 0.5), inset 0 0 0.26em 0 rgba(255, 255, 255, 0.25);
           -moz-box-shadow: inset 0 0 0.6em 0 rgba(255, 255, 255, 0.5), inset 0 0 0.26em 0 rgba(255, 255, 255, 0.25);
           box-shadow: inset 0 0 0.6em 0 rgba(255, 255, 255, 0.5), inset 0 0 0.26em 0 rgba(255, 255, 255, 0.25); } }
-  .button.orange {
-    background: #ff4d00;
+  .button.yellow {
+    background: #FFC219;
     color: #fff; }
-    .button.orange.outline {
+    .button.yellow.outline {
       background: transparent;
-      border: 2px solid #ff4d00;
-      color: #ff4d00; }
+      border: 2px solid #FFC219;
+      color: #FFC219; }
     @media screen and (min-width: 960px) and (max-width: 1280px), screen and (min-width: 1281px) and (max-width: 1919px), screen and (min-width: 1920px) {
-      .button.orange:hover {
+      .button.yellow:hover {
         background: #ed4e39; }
-        .button.orange:hover.outline {
-          background: rgba(255, 77, 0, 0.5); } }
+        .button.yellow:hover.outline {
+          background: rgba(255, 194, 25, 0.5); } }
   .button.dark-blue {
     background: #073971;
     color: #fff; }
@@ -1353,7 +1353,7 @@ section.navbar {
         .nav li.nav-item a.button::before {
           display: none; }
         .nav li.nav-item a.current, .nav li.nav-item a:hover {
-          color: #ff4d00; }
+          color: #FFC219; }
           .nav li.nav-item a.current.button, .nav li.nav-item a:hover.button {
             color: #fff; }
           .nav li.nav-item a.current::before, .nav li.nav-item a:hover::before {
@@ -1381,7 +1381,7 @@ section.navbar {
           line-height: 1rem;
           padding: 1rem; }
           .nav li.nav-item a.current {
-            color: #41cdfc; }
+            color: #FFC219; }
           .nav li.nav-item a.button {
             display: inline-block;
             border-color: #41cdfc;
@@ -1440,7 +1440,7 @@ section.navbar.is-scrolled {
   right: 1rem;
   z-index: 700; }
   .js-nav-trigger span {
-    background-color: #ff4d00;
+    background-color: #FFC219;
     display: block;
     position: absolute;
     width: 24px;
