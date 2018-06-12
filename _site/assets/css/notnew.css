@@ -837,9 +837,9 @@ section.color-block {
     background-image: radial-gradient(circle farthest-side at right top, #41cdfc, #052b55 125%); }
   section.color-block h1,
   section.color-block h2 {
-    margin-top: 0; }
+    margin-top: 1.618rem; }
   section.color-block h2 {
-    font-size: 2.618rem; }
+    font-size: 1.618rem; }
   @media screen and (max-width: 767px) {
     section.color-block {
       padding-left: 10px;
