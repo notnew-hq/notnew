@@ -837,9 +837,9 @@ section.color-block {
     background-image: radial-gradient(circle farthest-side at right top, #41cdfc, #052b55 125%); }
   section.color-block h1,
   section.color-block h2 {
-    margin-top: 0; }
+    margin-top: 1.618rem; }
   section.color-block h2 {
-    font-size: 2.618rem; }
+    font-size: 1.618rem; }
   @media screen and (max-width: 767px) {
     section.color-block {
       padding-left: 10px;
@@ -1665,73 +1665,6 @@ form#newsletter {
 #product-img {
   width: 100%; }
 
-.photo {
-  cursor: pointer; }
-  .photo img {
-    display: block;
-    width: 100%; }
-
-.photo.product-image-1 {
-  margin-bottom: 1.618rem; }
-
-.lightbox-photos {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%); }
-
-.lightbox-photo img {
-  display: block;
-  margin: auto;
-  max-width: 68vw;
-  max-height: 68vh;
-  height: auto; }
-
-#lightbox {
-  background: rgba(0, 0, 0, 0.8);
-  height: 100%;
-  left: 0;
-  padding: 1.618rem;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 900; }
-
-.lightbox-close {
-  border: 2px solid white;
-  color: white;
-  cursor: pointer;
-  display: inline-block;
-  margin-bottom: 1rem;
-  padding: .26em; }
-
-.lightbox-button {
-  border: 0;
-  -webkit-appearance: none; }
-  .lightbox-button svg {
-    display: inline-block; }
-  .lightbox-button.prev svg {
-    transform: rotate(180deg); }
-
-.lightbox-nav {
-  position: absolute;
-  width: 100%;
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%); }
-  @media screen and (max-width: 767px) {
-    .lightbox-nav {
-      bottom: 1.618rem;
-      -webkit-box-orient: horizontal;
-      -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-      flex-direction: row;
-      -webkit-box-pack: center !important;
-      -ms-flex-pack: center !important;
-      justify-content: center !important;
-      top: auto;
-      transform: none; } }
-
 .cart-contents.readonly .j-col:last-child {
   text-align: right; }
   @media screen and (max-width: 767px) {
@@ -1758,8 +1691,6 @@ form#newsletter {
   color: #fff; }
   #shipping input[type="text"]:focus {
     border-color: #fff; }
-#shipping button {
-  border: 0; }
 
 .checkout-payment {
   bottom: -200px;
