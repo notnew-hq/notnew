@@ -18,7 +18,12 @@ var allProducts = [
 	{
 		title: 'Sweatshirt',
 		desc: 'Yellow sweatshirt with white print.',
-		img: '/assets/img/not-new-sweatshirt-yellow-1.JPG',
+		images: [
+			'/assets/img/not-new-sweatshirt-yellow-1.JPG',
+			'/assets/img/not-new-sweatshirt-yellow-2.JPG',
+			'/assets/img/not-new-sweatshirt-yellow-3.JPG',
+			'/assets/img/not-new-sweatshirt-yellow-4.JPG',
+		],
 		price: '40',
     sku: 'NNH002'
 	},
@@ -123,7 +128,7 @@ if (checkStorage('shoppingCart')){
 			shoppingCart.items[i] = new Product(
 				shoppingCart.items[i].title,
 				shoppingCart.items[i].desc,
-				shoppingCart.items[i].img,
+				shoppingCart.items[i].images,
 				shoppingCart.items[i].price,
 				shoppingCart.items[i].sku,
 				shoppingCart.items[i].quantity,
@@ -142,11 +147,12 @@ $.each(allProducts, function(i) {
 	allProducts[i] = new Product(
 		allProducts[i].title,
 		allProducts[i].desc,
-		allProducts[i].img,
+		allProducts[i].images,
 		allProducts[i].price,
 		allProducts[i].sku,
 		1);
   allProducts[i]._display('#products');
+	console.log(allProducts[i]);
 });
 // user updates item quantity from dropdown
 $('select.cartItem-quantity').change(function(e) {
@@ -186,11 +192,11 @@ $('select.cartItem-quantity').change(function(e) {
 });
 
 /* Product Prototype */
-function Product(title, desc, img, price, sku, quantity, size=null) {
+function Product(title, desc, images, price, sku, quantity, size=null) {
 	// set object properties
 	this.title = title;
 	this.desc = desc;
-	this.img = img;
+	this.images = images;
 	this.price = price;
 	this.sku = sku;
 	this.quantity = quantity;
@@ -245,9 +251,9 @@ function Product(title, desc, img, price, sku, quantity, size=null) {
 	};
 	this._display = function(target) {
 		// set image
-		image.attr({
-			'src': img,
-		});
+		// image.attr({
+		// 	'src': images[0],
+		// });
 		// configure product
 		product.attr({
 			'class': 'j-col j-col-4 product',
@@ -256,7 +262,7 @@ function Product(title, desc, img, price, sku, quantity, size=null) {
 		// populate image, title, description, and price
 		.html(
 			'<a href="/product/?productId=' + sku + '">' +
-			'<img style="display: block; width: 100%;" src="' + img + '" alt="' + title + '">' +
+			'<img style="display: block; width: 100%;" src="' + images[0] + '" alt="' + title + '">' +
 			'<h2>' + title + '</h2></a>' +
 			'<p>' + desc + '</p>' +
 			'<p>$' + price + '</p>'
@@ -276,7 +282,7 @@ function Product(title, desc, img, price, sku, quantity, size=null) {
 	this._displayCart = function(target, id, editable) {
 		// set image
 		image.attr({
-			'src': img,
+			'src': images[0],
 		});
 		// configure product parent node
 		product.attr({
@@ -290,7 +296,7 @@ function Product(title, desc, img, price, sku, quantity, size=null) {
 		// render product details
 		if(editable) {
 			product.html(
-				'<img class="j-col j-col-2 cartItem-img" src="' + img + '" alt="' + title + '">' +
+				'<img class="j-col j-col-2 cartItem-img" src="' + images[0] + '" alt="' + title + '">' +
 				'<div class="j-col j-col-4"><span class="cartItem-title">' + title + '</span></div>' +
 				'<div class="j-col j-col-2"><span class="cartItem-size">' + size + '</span></div>' +
 				'<div class="j-col j-col-2"><span class="cartItem-price">$' + price + '</span></div>' +
@@ -309,7 +315,7 @@ function Product(title, desc, img, price, sku, quantity, size=null) {
 			.click($.proxy(this._removeFromCart, this));
 		} else {
 			product.html(
-				'<img class="j-col j-col-2 cartItem-img" src="' + img + '" alt="' + title + '">' +
+				'<img class="j-col j-col-2 cartItem-img" src="' + images[0] + '" alt="' + title + '">' +
 				'<div class="j-col j-col-4"><span class="cartItem-title">' + title + '</span></div>' +
 				'<div class="j-col j-col-2"><span class="cartItem-size">' + size + '</span></div>' +
 				'<div class="j-col j-col-2"><span class="cartItem-quantity--readonly">' + quantity + '</span></div>' +
