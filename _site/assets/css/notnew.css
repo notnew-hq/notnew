@@ -1442,7 +1442,7 @@ section.navbar.is-scrolled {
   right: 1rem;
   z-index: 700; }
   .js-nav-trigger span {
-    background-color: #FFC219;
+    background-color: #eee;
     display: block;
     position: absolute;
     width: 24px;
