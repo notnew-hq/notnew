@@ -32,7 +32,7 @@ var allProducts = [
 		desc: 'White sweatshirt with black print.',
 		images: [
 			'/assets/img/not-new-white-hoody-m-1.JPG',
-			'/assets/img/not-new-white-hoody-m-2.JPG',
+			'/assets/img/not-new-white-hoody-m-3.JPG',
 			'/assets/img/not-new-white-hoody-w-1.JPG',
 			'/assets/img/not-new-white-hoody-w-2.JPG',
 		],
