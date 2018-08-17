@@ -18,13 +18,13 @@ var allProducts = [
 		price: '40',
     sku: 'NNH002'
 	},
-	// {
-	// 	title: 'T-shirt',
-	// 	desc: 'Black shirt with front and back green print.',
-	// 	img: '/assets/img/black-shirt.jpg',
-	// 	price: '25',
-  //   sku: 'NNH003'
-	// },
+	{
+		title: 'T-shirt',
+		desc: 'Black shirt with front and back green print.',
+		img: '/assets/img/black-shirt.jpg',
+		price: '25',
+    sku: 'NNH003'
+	},
 ];
 
 var
