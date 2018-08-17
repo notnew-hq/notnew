@@ -125,7 +125,7 @@
   display: block;
   float: left;
   box-sizing: border-box;
-  padding: 0 $spacing-small;
+  padding: $spacing-small;
   &.wrap {
     padding: 0;
   }
