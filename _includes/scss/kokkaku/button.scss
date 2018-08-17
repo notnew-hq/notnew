@@ -1,7 +1,7 @@
 .button {
-	background: $blue;
-	border-radius: 3px;
-	color: $white;
+	background: transparent;
+	border: 2px solid $dark-black;
+	color: $dark-black;
 	cursor: pointer;
   display: inline-block;
   font-size: 0.8em;
@@ -14,7 +14,9 @@
 	text-transform: uppercase;
   @media #{$desktop-sm}, #{$desktop}, #{$desktop-xl} {
     &:hover {
-      background: #FFC219;
+			background: $dark-black;
+      border: 2px solid $dark-black;
+      color: $white;
     }
   }
   &.white {

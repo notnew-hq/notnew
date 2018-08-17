@@ -50,7 +50,7 @@ section.navbar {
       line-height: 110px;
       padding: 0 $spacing-small;
       text-decoration: none;
-      color: #41cdfc;
+      color: #eee;
       transition: 400ms $transition-ease-in;
       .cart-quantity {
         color: $white;
@@ -69,7 +69,7 @@ section.navbar {
           width: 0;
           height: 2px;
           transition: 400ms $transition-ease-in;
-          background: #41cdfc;
+          background: #eee;
         }
         &.button {
           &::before {
@@ -78,7 +78,7 @@ section.navbar {
         }
         &.current,
         &:hover {
-          color: $yellow;
+          color: $gray;
           &.button {
             color: $white;
           }
@@ -112,12 +112,12 @@ section.navbar {
         line-height: $spacing-small;
         padding: $spacing-small;
         &.current {
-          color: $yellow;
+          color: $gray;
         }
         &.button {
           display: inline-block;
-          border-color: $blue;
-          color: $blue;
+          border-color: $light-gray;
+          color: $light-gray;
         }
       }
     }
@@ -207,7 +207,7 @@ section.navbar.is-scrolled {
   &.is-clicked {
     span {
       top: 11px;
-      background: $blue;
+      background: $light-gray;
       &:first-child {
         -webkit-transform: rotate(-45deg);
                 transform: rotate(-45deg);

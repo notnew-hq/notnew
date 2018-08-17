@@ -10,10 +10,10 @@
     <nav class="nav">
       <ul>
         <li class="nav-item">
-          <a href="{{"/" | relative_url}}"{% if page.url == "/" %} class="current"{% endif %} title="Shop Not New">Shop</a>
+          <a href="{{"/" | relative_url}}"{% if page.url == "/" %} class="current"{% endif %} title="Shop Not New" style="color: #ccc;">Shop</a>
         </li>
         <li class="nav-item">
-          <a href="{{"/cart/" | relative_url}}"{% if page.url == "/cart/" %} class="current"{% endif %} title="View Cart">Cart (<span class="cart-quantity">0</span>)</a>
+          <a href="{{"/cart/" | relative_url}}"{% if page.url == "/cart/" %} class="current"{% endif %} title="View Cart" style="color: #ccc;">Cart (<span class="cart-quantity">0</span>)</a>
         </li>
       </ul>
     </nav>
