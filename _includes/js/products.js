@@ -7,13 +7,13 @@ var allProducts = [
   //   sku: 'NNH001'
 	// },
 	{
-		title: 'Sweatshirt',
-		desc: 'Yellow sweatshirt with white print.',
+		title: 'Sand Sweatshirt',
+		desc: 'Sand sweatshirt with white print.',
 		images: [
 			'/assets/img/not-new-sand-hoody-w-1.JPG',
 			'/assets/img/not-new-sand-hoody-w-2.JPG',
-			'/assets/img/not-new-red-hoody-w-1.JPG',
-			'/assets/img/not-new-pink-hoody-w-1.JPG',
+			'/assets/img/not-new-sand-hoody-w-3.JPG',
+			'/assets/img/not-new-sand-hoody-w-4.JPG',
 		],
 		price: '40',
     sku: 'NNH002'
