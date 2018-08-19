@@ -59,10 +59,10 @@ var allProducts = [
 		title: 'Yellow Sweatshirt',
 		desc: 'Yellow sweatshirt with white print.',
 		images: [
-			'/assets/img/not-new-sweatshirt-yellow-3.JPG',
 			'/assets/img/not-new-sweatshirt-yellow-1.JPG',
+			'/assets/img/not-new-sweatshirt-yellow-3.JPG',
 			'/assets/img/not-new-sweatshirt-yellow-2.JPG',
-			'/assets/img/not-new-yellow-hoody-m-1.JPG',
+			'/assets/img/not-new-sweatshirt-yellow-4.JPG',
 		],
 		price: '40',
 		sku: 'NNH005'
