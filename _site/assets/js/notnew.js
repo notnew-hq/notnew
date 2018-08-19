@@ -16,10 +16,22 @@ var allProducts = [
   //   sku: 'NNH001'
 	// },
 	{
-		title: 'Sand Sweatshirt',
-		desc: 'Sand sweatshirt with white print.',
+		title: 'White T-Shirt',
+		desc: 'White t-shirt with front and back black print.',
 		images: [
-			'/assets/img/not-new-sand-hoody-w-1.JPG',
+			'/assets/img/not-new-white-t-5.jpg',
+			'/assets/img/not-new-white-t-10.jpg',
+			'/assets/img/not-new-white-t-14.jpg',
+			'/assets/img/not-new-white-t-1.jpg',
+		],
+		price: '25',
+		sku: 'NNH006'
+	},
+	{
+		title: 'Sand Sweatshirt',
+		desc: 'Sand sweatshirt with white print.<br>(Sand larges on backorder.)',
+		images: [
+			'/assets/img/not-new-sand-hoody-w-landscape.JPG',
 			'/assets/img/not-new-sand-hoody-w-2.JPG',
 			'/assets/img/not-new-sand-hoody-w-3.JPG',
 			'/assets/img/not-new-sand-hoody-w-4.JPG',
