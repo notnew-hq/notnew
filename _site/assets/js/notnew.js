@@ -8,13 +8,6 @@ function isTouch() { // check to see if touch screen
   }
 }
 var allProducts = [
-  // {
-	// 	title: 'Sweatshirt',
-	// 	desc: 'Black sweatshirt with print on chest and right arm.',
-	// 	img: '/assets/img/black-sweatshirt.jpg',
-	// 	price: '40',
-  //   sku: 'NNH001'
-	// },
 	{
 		title: 'White T-Shirt',
 		desc: 'White t-shirt with front and back black print.',
@@ -25,11 +18,23 @@ var allProducts = [
 			'/assets/img/not-new-white-t-1.jpg',
 		],
 		price: '21',
+		sku: 'NNH007'
+	},
+	{
+		title: 'Pink Sweatshirt',
+		desc: 'Pink sweatshirt with white print.<br>(Pink L and XL on backorder.)',
+		images: [
+			'/assets/img/not-new-pink-hoody-w-1.JPG',
+			'/assets/img/not-new-pink-hoody-w-2.JPG',
+			'/assets/img/not-new-pink-hoody-w-3.JPG',
+			'/assets/img/not-new-pink-hoody-w-4.JPG',
+		],
+		price: '40',
 		sku: 'NNH006'
 	},
 	{
 		title: 'Sand Sweatshirt',
-		desc: 'Sand sweatshirt with white print.<br>(Sand larges on backorder.)',
+		desc: 'Sand sweatshirt with white print.<br>(Sand L on backorder.)',
 		images: [
 			'/assets/img/not-new-sand-hoody-w-landscape.JPG',
 			'/assets/img/not-new-sand-hoody-w-2.JPG',
