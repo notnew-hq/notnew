@@ -13,7 +13,7 @@ var allProducts = [
 	},
 	{
 		title: 'Pink Sweatshirt',
-		desc: 'Pink sweatshirt with white print.<br>(Pink L and XL on backorder.)',
+		desc: 'Pink sweatshirt with white print. (Pink L and XL on backorder.)',
 		images: [
 			'/assets/img/not-new-pink-hoody-w-1.JPG',
 			'/assets/img/not-new-pink-hoody-w-2.JPG',
@@ -25,7 +25,7 @@ var allProducts = [
 	},
 	{
 		title: 'Sand Sweatshirt',
-		desc: 'Sand sweatshirt with white print.<br>(Sand L on backorder.)',
+		desc: 'Sand sweatshirt with white print. (Sand L on backorder.)',
 		images: [
 			'/assets/img/not-new-sand-hoody-w-landscape.JPG',
 			'/assets/img/not-new-sand-hoody-w-2.JPG',
