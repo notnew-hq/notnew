@@ -49,7 +49,7 @@ var allProducts = [
 	},
 	{
 		title: 'Red Sweatshirt',
-		desc: 'Red sweatshirt with white print.',
+		desc: 'Red sweatshirt with white print. (Red L on backorder)',
 		images: [
 			'/assets/img/not-new-red-hoody-m-1.JPG',
 			'/assets/img/not-new-red-hoody-m-2.JPG',
