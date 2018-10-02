@@ -32,18 +32,18 @@ var allProducts = [
 		price: '21',
 		sku: 'NNH004'
 	},
-	{
-		title: 'White T-Shirt',
-		desc: 'White t-shirt two-toned',
-		images: [
-			'/assets/img/not-new-two-colors-white-t-1.jpg',
-			'/assets/img/not-new-two-colors-white-t-2.jpg',
-			'/assets/img/not-new-two-colors-white-t-3.jpg',
-			'/assets/img/not-new-two-colors-white-t-4.jpg',
-		],
-		price: '29',
-		sku: 'NNH007'
-	},
+	// {
+	// 	title: 'White T-Shirt',
+	// 	desc: 'White t-shirt two-toned',
+	// 	images: [
+	// 		'/assets/img/not-new-two-colors-white-t-1.jpg',
+	// 		'/assets/img/not-new-two-colors-white-t-2.jpg',
+	// 		'/assets/img/not-new-two-colors-white-t-3.jpg',
+	// 		'/assets/img/not-new-two-colors-white-t-4.jpg',
+	// 	],
+	// 	price: '29',
+	// 	sku: 'NNH007'
+	// },
 	{
 		title: 'Pink Sweatshirt',
 		desc: 'Pink sweatshirt with white print. (Pink L and XL on backorder)',
