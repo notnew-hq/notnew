@@ -8,18 +8,18 @@ function isTouch() { // check to see if touch screen
   }
 }
 var allProducts = [
-	{
-		title: 'Blue Sweatshirt',
-		desc: 'Blue sweatshirt with white and black print (Made to order)',
-		images: [
-			'/assets/img/not-new-blue-0003.jpg',
-			'/assets/img/not-new-blue-0004.jpg',
-			'/assets/img/not-new-blue-0002.jpg',
-			'/assets/img/not-new-blue-0001.jpg',
-		],
-		price: '45',
-		sku: 'NNH008'
-	},
+	// {
+	// 	title: 'Blue Sweatshirt',
+	// 	desc: 'Blue sweatshirt with white and black print (Made to order)',
+	// 	images: [
+	// 		'/assets/img/not-new-blue-0003.jpg',
+	// 		'/assets/img/not-new-blue-0004.jpg',
+	// 		'/assets/img/not-new-blue-0002.jpg',
+	// 		'/assets/img/not-new-blue-0001.jpg',
+	// 	],
+	// 	price: '45',
+	// 	sku: 'NNH008'
+	// },
 	{
 		title: 'White T-Shirt',
 		desc: 'White t-shirt with front and back black print',
