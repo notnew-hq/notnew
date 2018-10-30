@@ -1,16 +1,16 @@
 var allProducts = [
-	// {
-	// 	title: 'Blue Sweatshirt',
-	// 	desc: 'Blue sweatshirt with white and black print (Made to order)',
-	// 	images: [
-	// 		'/assets/img/not-new-blue-0003.jpg',
-	// 		'/assets/img/not-new-blue-0004.jpg',
-	// 		'/assets/img/not-new-blue-0002.jpg',
-	// 		'/assets/img/not-new-blue-0001.jpg',
-	// 	],
-	// 	price: '45',
-	// 	sku: 'NNH008'
-	// },
+	{
+		title: 'Red Sweats',
+		desc: 'Red Sweats with white print',
+		images: [
+			'/assets/img/not-new-red-sweats-1.jpg',
+			'/assets/img/not-new-red-sweats-2.jpg',
+			'/assets/img/not-new-red-sweats-3.jpg',
+			'/assets/img/not-new-red-sweats-4.jpg',
+		],
+		price: '37',
+		sku: 'NNH008'
+	},
 	{
 		title: 'White T-Shirt',
 		desc: 'White t-shirt with front and back black print',
@@ -44,7 +44,7 @@ var allProducts = [
 			'/assets/img/not-new-pink-hoody-w-3.JPG',
 			'/assets/img/not-new-pink-hoody-w-4.JPG',
 		],
-		price: '40',
+		price: '43',
 		sku: 'NNH006'
 	},
 	{
@@ -56,7 +56,7 @@ var allProducts = [
 			'/assets/img/not-new-sand-hoody-w-3.JPG',
 			'/assets/img/not-new-sand-hoody-w-4.JPG',
 		],
-		price: '40',
+		price: '43',
     sku: 'NNH001'
 	},
 	{
@@ -68,7 +68,7 @@ var allProducts = [
 			'/assets/img/not-new-white-hoody-w-1.JPG',
 			'/assets/img/not-new-white-hoody-w-2.JPG',
 		],
-		price: '40',
+		price: '43',
     sku: 'NNH002'
 	},
 	{
@@ -80,7 +80,7 @@ var allProducts = [
 			'/assets/img/not-new-red-hoody-w-1.JPG',
 			'/assets/img/not-new-red-hoody-w-2.JPG',
 		],
-		price: '40',
+		price: '43',
 		sku: 'NNH003'
 	},
 
@@ -93,7 +93,7 @@ var allProducts = [
 			'/assets/img/not-new-sweatshirt-yellow-2.JPG',
 			'/assets/img/not-new-sweatshirt-yellow-4.JPG',
 		],
-		price: '40',
+		price: '43',
 		sku: 'NNH005'
 	},
 ]

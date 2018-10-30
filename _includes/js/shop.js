@@ -4,14 +4,14 @@ var shoppingCart = {
 	items:[],
 	totalItems: 0,
 	subTotal: 0,
-	shipping: 0,
+	// shipping: 0,
 },
 max_items = 100, // declare max order quantity
 cartInfo = function() {
 	// Display cart total and calculate shipping
 	$('.cart-subtotal').text('$' + shoppingCart.subTotal);
-	$('.cart-shipping').text('$' + shoppingCart.shipping);
-	$('.cart-total').text('$' + (shoppingCart.subTotal + shoppingCart.shipping));
+	// $('.cart-shipping').text('$' + shoppingCart.shipping);
+	$('.cart-total').text('$' + (shoppingCart.subTotal));
 },
 checkCart = function(sku, size) {
 	var
@@ -33,7 +33,7 @@ checkCart = function(sku, size) {
 },
 updateCart = function(){
 	var
-	shipping = 0,
+	// shipping = 0,
 	subTotal = 0,
 	totalItems = 0;
 	if (shoppingCart.items.length > 0) {
@@ -46,17 +46,17 @@ updateCart = function(){
 		shoppingCart.subTotal = subTotal;
 		shoppingCart.totalItems = totalItems;
 		// set shipping rates
-		if (shoppingCart.totalItems < 2) {
-			shoppingCart.shipping = 8;
-		} else if (shoppingCart.totalItems > 2 && shoppingCart.totalItems <= 5) {
-			shoppingCart.shipping = 15;
-		} else if (shoppingCart.totalItems > 5) {
-			shoppingCart.shipping = 20;
-		}
-	} else {
-		shoppingCart.subTotal = 0;
-		shoppingCart.totalItems = 0;
-		shoppingCart.shipping = 0;
+	// 	if (shoppingCart.totalItems < 2) {
+	// 		shoppingCart.shipping = 8;
+	// 	} else if (shoppingCart.totalItems > 2 && shoppingCart.totalItems <= 5) {
+	// 		shoppingCart.shipping = 15;
+	// 	} else if (shoppingCart.totalItems > 5) {
+	// 		shoppingCart.shipping = 20;
+	// 	}
+	// } else {
+	// 	shoppingCart.subTotal = 0;
+	// 	shoppingCart.totalItems = 0;
+	// 	// shoppingCart.shipping = 0;
 	}
 	// update cart item counters across site
 	$('.cart-quantity').text(shoppingCart.totalItems);
