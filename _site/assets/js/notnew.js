@@ -29,7 +29,7 @@ var allProducts = [
 			'/assets/img/not-new-white-t-14.jpg',
 			'/assets/img/not-new-white-t-1.jpg',
 		],
-		price: '21',
+		price: '25',
 		sku: 'NNH004'
 	},
 	// {
