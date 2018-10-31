@@ -37,7 +37,7 @@ var allProducts = [
 	// },
 	{
 		title: 'Pink Sweatshirt',
-		desc: 'Pink sweatshirt with white print. (Pink L and XL on backorder)',
+		desc: 'Pink sweatshirt with white print. (Pink Large and XL on backorder)',
 		images: [
 			'/assets/img/not-new-pink-hoody-w-1.JPG',
 			'/assets/img/not-new-pink-hoody-w-2.JPG',
@@ -49,7 +49,7 @@ var allProducts = [
 	},
 	{
 		title: 'Sand Sweatshirt',
-		desc: 'Sand sweatshirt with white print (Sand L on backorder)',
+		desc: 'Sand sweatshirt with white print (All sizes on back order)',
 		images: [
 			'/assets/img/not-new-sand-hoody-w-landscape.JPG',
 			'/assets/img/not-new-sand-hoody-w-2.JPG',
@@ -61,7 +61,7 @@ var allProducts = [
 	},
 	{
 		title: 'White Sweatshirt',
-		desc: 'White sweatshirt with black print',
+		desc: 'White sweatshirt with black print (White Small, Large and XLs on back order)',
 		images: [
 			'/assets/img/not-new-white-hoody-m-3.JPG',
 			'/assets/img/not-new-white-hoody-m-1.JPG',
@@ -73,7 +73,7 @@ var allProducts = [
 	},
 	{
 		title: 'Red Sweatshirt',
-		desc: 'Red sweatshirt with white print',
+		desc: 'Red sweatshirt with white print(Red XLs and Smalls on back order)',
 		images: [
 			'/assets/img/not-new-red-hoody-m-1.JPG',
 			'/assets/img/not-new-red-hoody-m-2.JPG',
@@ -86,7 +86,7 @@ var allProducts = [
 
 	{
 		title: 'Yellow Sweatshirt',
-		desc: 'Yellow sweatshirt with white print',
+		desc: 'Yellow sweatshirt with white print (Yellow Small and Medium on back order)',
 		images: [
 			'/assets/img/not-new-sweatshirt-yellow-1.JPG',
 			'/assets/img/not-new-sweatshirt-yellow-3.JPG',
